@@ -61,9 +61,9 @@ const ContactPage = () => {
 
             <div className="space-y-8">
               {[
-                { icon: <Phone className="text-orange-500" />, title: "Call Us", detail: "+1 (234) 567-890", sub: "Mon-Fri from 9am to 6pm" },
-                { icon: <Mail className="text-orange-500" />, title: "Email Us", detail: "hello@qcdtravels.com", sub: "Online support 24/7" },
-                { icon: <MapPin className="text-orange-500" />, title: "Visit Office", detail: "123 Adventure Way, Travel City", sub: "Global HQ" },
+                { icon: <Phone className="text-orange-500" />, title: "Call Us", detail: "+91 9810-655-656", sub: "Mon-Fri from 9am to 6pm" },
+                { icon: <Mail className="text-orange-500" />, title: "Email Us", detail: " travel@qcdtravels.com", sub: "Online support 24/7" },
+                { icon: <MapPin className="text-orange-500" />, title: "Visit Office", detail: "1301, Pearl Best Heights 1, Netaji Subhash Place, Pitampura, New Delhi, Delhi, 110034", sub: "Global HQ" },
               ].map((item, idx) => (
                 <div key={idx} className="flex gap-6 items-start">
                   <div className="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center shrink-0">

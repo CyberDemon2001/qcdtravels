@@ -3,7 +3,7 @@ import { useState, useRef } from "react";
 import GlassNavbar from "@/components/GlassNavbar";
 import TravelCarousel from "@/components/TravelCarousel";
 import PopularDestinations from "@/components/PopularDestinations";
-import About from "./about/page";
+import About from "@/components/About";
 import Tours from "@/components/Tours";
 import Offers from "@/components/Offers";
 import TopDestinations from "@/components/TopDestinations";
