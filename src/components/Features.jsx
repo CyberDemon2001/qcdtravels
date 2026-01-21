@@ -42,7 +42,7 @@ const Features = () => {
   }, [])
 
   return (
-    <section className="px-6 md:px-12 lg:px-24 py-24 bg-white overflow-hidden font-['Inter_Variable']">
+    <section className="px-6 md:px-12 lg:px-24 py-24 bg-gradient-to-br from-orange-500/80 via-white to-orange-500/90 overflow-hidden font-['Inter_Variable']">
       
       {/* Background Subtle Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 via-white to-orange-100/20 -z-10 pointer-events-none" />

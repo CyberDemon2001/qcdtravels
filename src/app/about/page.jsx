@@ -13,7 +13,7 @@ const About = () => {
   return (
     <section className="max-w-full mx-auto px-6 py-24 relative overflow-hidden bg-white">
       {/* Background Gradients */}
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-white to-orange-500/10 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-500/80 via-white to-orange-500/80 pointer-events-none" />
       
       {/* Decorative floating particles */}
       <div className="absolute top-20 right-20 w-72 h-72 bg-orange-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" />

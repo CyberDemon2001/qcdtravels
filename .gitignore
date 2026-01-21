@@ -10,7 +10,7 @@
 !.yarn/releases
 !.yarn/versions
 
-# lock files
+# lock files    
 package-lock.json
 
 # testing
