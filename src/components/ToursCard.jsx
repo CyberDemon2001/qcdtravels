@@ -3,9 +3,12 @@ import React from 'react';
 import { MapPin, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const ToursCard = ({ item, index }) => {
+const slug = item.title.toLowerCase().replace(/ /g, '-');
   return (
+    <Link href={`/tours/${slug}`}>
     <motion.div 
       className="group relative pt-8 pb-12 pr-4 md:pr-8"
       initial={{ opacity: 0, y: 30 }}
@@ -64,6 +67,7 @@ const ToursCard = ({ item, index }) => {
         </div>
       </motion.div>
     </motion.div>
+    </Link>
   );
 };
 
