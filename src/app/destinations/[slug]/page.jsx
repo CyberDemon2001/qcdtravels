@@ -58,7 +58,7 @@ const DestinationDetail = () => {
       <GlassNavbar />
 
       {/* --- CREATIVE HERO SECTION (Masked Text Effect) --- */}
-      <section className="relative min-h-[60vh] w-full flex items-center justify-center overflow-hidden bg-black">
+      <section className="relative min-h-[50vh] lg:min-h-[60vh] w-full flex items-center justify-center overflow-hidden bg-black">
         {/* Background Layer: Blurred and Darkened */}
         <div className="absolute inset-0 z-0">
           <Image 
@@ -79,7 +79,7 @@ const DestinationDetail = () => {
           >
             {/* The "Masked" Heading */}
             <h1 
-              className="text-[15vw] md:text-[16vw] font-black uppercase tracking-tighter leading-none select-none"
+              className="text-[18vw] md:text-[16vw] font-black uppercase tracking-tighter leading-none select-none"
               style={{
                 backgroundImage: `url(${data.image})`,
                 backgroundSize: 'cover',
