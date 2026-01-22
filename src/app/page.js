@@ -1,5 +1,8 @@
 "use client";
-import { useState, useRef } from "react";
+import React, { useState, useRef } from "react";
+import { AnimatePresence } from "framer-motion";
+
+// Component Imports
 import GlassNavbar from "@/components/GlassNavbar";
 import TravelCarousel from "@/components/TravelCarousel";
 import PopularDestinations from "@/components/PopularDestinations";
@@ -9,9 +12,10 @@ import Offers from "@/components/Offers";
 import TopDestinations from "@/components/TopDestinations";
 import Features from "@/components/Features";
 import Footer from "@/components/Footer";
-// ... Import other components using the @ alias
+import Loader from "@/components/Loader"; // Make sure to save the Loader code in this path
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
   const [chatOpen, setChatOpen] = useState(true);
   const reopenTimerRef = useRef(null);
 
@@ -24,20 +28,33 @@ export default function Home() {
   const openChat = () => setChatOpen(true);
 
   return (
-    <main className="min-h-screen relative">
-      <GlassNavbar />
-      <TravelCarousel />
-      <PopularDestinations />
-      <About />
-      <Tours />
-      <Offers />
-      <TopDestinations />
-      <Features />
-      
-      {/* ChatBot component would go here */}
-      {/* <ChatBot open={chatOpen} onClose={closeChat} onOpen={openChat} /> */}
-      
-      <Footer />
+    <main className="min-h-screen relative bg-white">
+      <AnimatePresence mode="wait">
+        {isLoading ? (
+          /* Loader Component */
+          <Loader key="loader" finishLoading={() => setIsLoading(false)} />
+        ) : (
+          /* Main Website Content */
+          <div key="main-content">
+            <GlassNavbar />
+            <TravelCarousel />
+            
+            {/* The following sections have the 'whileInView' animations we added */}
+            <PopularDestinations />
+            <About />
+            <Tours />
+            <Offers />
+            <TopDestinations />
+            <Features />
+            
+            <Footer />
+          </div>
+        )}
+      </AnimatePresence>
+
+      {/* ChatBot (Rendered outside the loading conditional if you want it always available, 
+          or inside if it should wait for the loader) */}
+      {/* {!isLoading && <ChatBot open={chatOpen} onClose={closeChat} onOpen={openChat} />} */}
     </main>
   );
 }

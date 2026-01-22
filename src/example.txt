@@ -1,0 +1,51 @@
+import { createPost, getPosts, deletePost } from "@/actions/postActions";
+
+export default async function Home() {
+  const posts = await getPosts();
+
+  return (
+    <main className="p-10 space-y-10">
+      
+      {/* CREATE */}
+      <form action={createPost} className="space-y-4">
+        <input
+          name="title"
+          placeholder="Title"
+          className="border p-2 w-full"
+          required
+        />
+
+        <input
+          type="file"
+          name="image"
+          accept="image/*"
+          required
+        />
+
+        <button className="bg-black text-white px-4 py-2">
+          Create
+        </button>
+      </form>
+
+      {/* READ */}
+      <div className="grid grid-cols-3 gap-6">
+        {posts.map((post) => (
+          <div key={post._id} className="border p-4 space-y-3">
+            <img
+              src={post.image}
+              className="h-40 w-full object-cover"
+            />
+
+            <h2 className="font-bold">{post.title}</h2>
+
+            {/* DELETE */}
+            <form action={deletePost.bind(null, post._id)}>
+              <button className="text-red-600">Delete</button>
+            </form>
+          </div>
+        ))}
+      </div>
+
+    </main>
+  );
+}
