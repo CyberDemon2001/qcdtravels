@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import Image from 'next/image';
-import { Facebook, Twitter, Linkedin, Youtube, Award, Send } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Youtube, Award, Send } from 'lucide-react';
 import logo from "../../public/assets/logo.png"; // Next.js optimizes this import automatically
 
 const Footer = () => {
@@ -71,7 +71,7 @@ const Footer = () => {
 
             <div className="flex flex-col items-center md:items-end gap-4">
               <div className="flex gap-3">
-                {[Facebook, Twitter, Linkedin, Youtube].map((Icon, i) => (
+                {[Facebook, Twitter, Instagram, Youtube].map((Icon, i) => (
                   <a key={i} href="#" className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300 group">
                     <Icon size={20} className="group-hover:scale-110 transition-transform" />
                   </a>

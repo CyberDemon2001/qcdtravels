@@ -3,7 +3,7 @@ import { Bell, User } from "lucide-react";
 
 export const Header = () => {
   return (
-    <header className="bg-gray-800 text-white px-6 h-16 flex items-center justify-between shadow">
+    <header className="bg-gray-800 text-white px-6 h-16 flex items-center justify-between shadow fixed top-0 left-0 right-0 z-50">
       {/* Left */}
       <div className="flex items-center gap-8">
         <h1 className="text-xl font-bold tracking-wide">Admin Panel</h1>

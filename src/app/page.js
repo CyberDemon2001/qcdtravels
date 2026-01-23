@@ -13,6 +13,7 @@ import TopDestinations from "@/components/TopDestinations";
 import Features from "@/components/Features";
 import Footer from "@/components/Footer";
 import Loader from "@/components/Loader"; // Make sure to save the Loader code in this path
+import ChatBot from "@/components/Chatbot";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -46,7 +47,7 @@ export default function Home() {
             <Offers />
             <TopDestinations />
             <Features />
-            
+            <ChatBot open={chatOpen} onClose={closeChat} onOpen={openChat} />
             <Footer />
           </div>
         )}
