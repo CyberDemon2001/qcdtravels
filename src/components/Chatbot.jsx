@@ -234,7 +234,7 @@ export default function ChatBot({ open, onClose, onOpen }) {
             exit={{ opacity: 0, scale: 0.8, y: 100 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
             className="lg:w-[380px] w-[320px] backdrop-blur-md rounded-[2.5rem] shadow-2xl border border-white/40 overflow-hidden flex flex-col h-[600px] lg:h-[650px]"
-            >
+          >
             {/* Header */}
             <div className="p-5 text-white flex items-center gap-3 shrink-0 bg-gradient-to-br from-orange-500/50 to-orange-600/50 backdrop-blur-md">
               <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center border border-white/30 shrink-0">
