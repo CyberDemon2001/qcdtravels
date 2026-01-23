@@ -218,7 +218,7 @@ export default function ChatBot({ open, onClose, onOpen }) {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-[1000]">
+    <div className="fixed bottom-6 right-6 z-1000">
       <AnimatePresence mode="wait">
         {open ? (
           /* --- CHAT WINDOW --- */
@@ -233,10 +233,10 @@ export default function ChatBot({ open, onClose, onOpen }) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 100 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="lg:w-[380px] w-[320px] backdrop-blur-md rounded-[2.5rem] shadow-2xl border border-white/40 overflow-hidden flex flex-col h-[600px] lg:h-[650px]"
+            className="lg:w-95 w-[320px] backdrop-blur-md rounded-[2.5rem] shadow-2xl border border-white/40 overflow-hidden flex flex-col h-150 lg:h-162.5"
           >
             {/* Header */}
-            <div className="p-5 text-white flex items-center gap-3 shrink-0 bg-gradient-to-br from-orange-500/50 to-orange-600/50 backdrop-blur-md">
+            <div className="p-5 text-white flex items-center gap-3 shrink-0 bg-linear-to-br from-orange-500/50 to-orange-600/50 backdrop-blur-md">
               <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center border border-white/30 shrink-0">
                 <Image
                   src={travelDidiBot.image}
@@ -303,7 +303,7 @@ export default function ChatBot({ open, onClose, onOpen }) {
             {/* Input / Options Area */}
             <div className="p-4 bg-white/50 border-t border-gray-100">
               {conversationStep === "interest" && (
-                <div className="grid gap-2 max-h-[220px] overflow-y-auto pr-1">
+                <div className="grid gap-2 max-h-55 overflow-y-auto pr-1">
                   {interestOptions.map((opt) => (
                     <motion.button
                       whileHover={{ x: 5 }}
@@ -360,7 +360,7 @@ export default function ChatBot({ open, onClose, onOpen }) {
               )}
 
               {conversationStep === "tripType" && (
-                <div className="flex flex-wrap gap-2 max-h-[150px] overflow-y-auto">
+                <div className="flex flex-wrap gap-2 max-h-37.5 overflow-y-auto">
                   {tripTypeOptions.map((t) => (
                     <button
                       key={t}
@@ -406,7 +406,7 @@ export default function ChatBot({ open, onClose, onOpen }) {
                   />
                   <button
                     onClick={handleSendMessage}
-                    className="w-12 h-12 bg-gradient-to-r from-orange-400 to-orange-600 text-white rounded-2xl flex items-center justify-center shadow-lg active:scale-90 transition-transform"
+                    className="w-12 h-12 bg-linear-to-r from-orange-400 to-orange-600 text-white rounded-2xl flex items-center justify-center shadow-lg active:scale-90 transition-transform"
                   >
                     <FiSend size={20} />
                   </button>
@@ -450,7 +450,7 @@ export default function ChatBot({ open, onClose, onOpen }) {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="relative w-[300px] h-[450px] overflow-hidden"
+              className="relative w-75 h-112.5 overflow-hidden"
             >
               <Image
                 src={traveldidiImage}
