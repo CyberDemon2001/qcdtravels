@@ -3,8 +3,24 @@ import mongoose from "mongoose";
 let isConnected = false;
 
 export async function connectDB() {
-  if (isConnected) return;
+  if (isConnected) {
+    console.log("✅ MongoDB already connected");
+    return;
+  }
 
-  await mongoose.connect(process.env.MONGODB_URI);
-  isConnected = true;
+  try {
+    const db = await mongoose.connect(process.env.MONGODB_URI);
+
+    isConnected = db.connections[0].readyState === 1;
+
+    console.log(
+      "✅ MongoDB connected:",
+      db.connection.host,
+      "| State:",
+      db.connections[0].readyState
+    );
+  } catch (error) {
+    console.error("❌ MongoDB connection failed:", error.message);
+    throw error;
+  }
 }

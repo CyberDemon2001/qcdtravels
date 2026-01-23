@@ -13,7 +13,7 @@ const CityPlanSchema = new mongoose.Schema(
       min: 1,
     },
   },
-  { _id: false }
+  { _id: false },
 );
 
 const TourSchema = new mongoose.Schema(
@@ -59,16 +59,15 @@ const TourSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    
-     isActive: {
+
+    isActive: {
       type: Boolean,
       default: true,
     },
   },
   {
     timestamps: true,
-  }
+  },
 );
 
-export default mongoose.models.Tour ||
-  mongoose.model("Tour", TourSchema);
+export default mongoose.models.Tour || mongoose.model("Tour", TourSchema);
