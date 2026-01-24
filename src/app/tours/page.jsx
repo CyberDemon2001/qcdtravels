@@ -9,16 +9,39 @@ import ToursCard from '@/components/ToursCard';
 
 const ALL_TOURS = [
   {
-    id: 1,
-    tag: "Best seller",
-    tagColor: "bg-gradient-to-r from-blue-600 to-blue-800",
-    image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80",
-    title: "London Westminster Experience",
-    location: "Westminster, London, UK",
-    price: "72",
-    rating: "4.9",
-    reviews: "2,612",
+  id: 1,
+  title: "London Westminster Experience",
+  imageURL: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80",
+  duration: {
+    days: 4,
+    nights: 3
   },
+  startDate: "2026-05-10T00:00:00.000Z",
+  endDate: "2026-05-14T00:00:00.000Z",
+  startingPrice: 7200, // Changed to number to match schema
+  itinerary: [
+    { city: "Westminster", days: 1 },
+    { city: "London City", days: 2 }
+  ],
+  isActive: true
+},
+  {
+  id: 2,
+  title: "London Westminster Experience",
+  imageURL: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80",
+  duration: {
+    days: 4,
+    nights: 3
+  },
+  startDate: "2026-05-10T00:00:00.000Z",
+  endDate: "2026-05-14T00:00:00.000Z",
+  startingPrice: 7200, // Changed to number to match schema
+  itinerary: [
+    { city: "Westminster", days: 2 },
+    { city: "London City", days: 2 }
+  ],
+  isActive: true
+}
   // ... other tour objects
 ];
 

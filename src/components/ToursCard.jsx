@@ -1,72 +1,111 @@
 "use client"
 import React from 'react';
-import { MapPin, Star } from 'lucide-react';
+import { MapPin, Clock, Calendar, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const ToursCard = ({ item, index }) => {
-const slug = item.title.toLowerCase().replace(/ /g, '-');
+  // Generate SEO-friendly slug from the title
+  const slug = item.title.toLowerCase().replace(/ /g, '-');
+
+  // Format the date to a readable string (e.g., "Jan 24, 2026")
+  const formatDate = (dateString) => {
+    return new Date(dateString).toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric'
+    });
+  };
+
+  // Get a list of cities from the itinerary for the location string
+  const citiesList = item.itinerary?.map(plan => plan.city).join(' • ') || 'Various Locations';
+
   return (
     <Link href={`/tours/${slug}`}>
-    <motion.div 
-      className="group relative pt-8 pb-12 pr-4 md:pr-8"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-    >
-      {/* Image Container */}
-      <div className="relative h-[300px] w-full rounded-3xl overflow-hidden shadow-2xl z-0 bg-slate-100">
-        {item.tag && (
-          <div className={`absolute top-4 left-1/2 -translate-x-1/2 z-30 px-5 py-2 rounded-2xl text-white text-[10px] font-bold uppercase tracking-widest shadow-lg ${item.tagColor}`}>
-            {item.tag}
-          </div>
-        )}
-        
-        {/* Next.js Optimized Image */}
-        <Image 
-          src={item.image} 
-          alt={item.title} 
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-      </div>
-
-      {/* Content Card */}
       <motion.div 
-        className="relative z-20 -mt-16 ml-6 w-[92%] bg-white/95 backdrop-blur-md rounded-2xl p-5 shadow-xl border border-white/50"
-        whileHover={{ y: -5, backgroundColor: "rgba(255, 255, 255, 1)" }}
-        transition={{ type: "spring", stiffness: 300 }}
+        className="group relative pb-12 pr-4 md:pr-8 h-full"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: index * 0.1 }}
       >
-        <h3 className="font-bold text-base text-gray-900 leading-tight mb-2 line-clamp-2 group-hover:text-orange-500 transition-colors">
-          {item.title}
-        </h3>
-        
-        <div className="flex items-center gap-1 text-gray-500 mb-3">
-          <MapPin size={14} className="text-orange-500" />
-          <span className="text-xs font-medium">{item.location}</span>
+        {/* --- IMAGE CONTAINER --- */}
+        <div className="relative h-[280px] w-full rounded-[2.5rem] overflow-hidden shadow-2xl z-0 bg-slate-100">
+          {/* Badge showing Days/Nights */}
+          <div className="absolute top-2 left-1/2 -translate-x-1/2 z-30 px-3 py-1 rounded-2xl bg-orange-500 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-widest shadow-lg border border-white/10">
+            {item.duration.days}Days / {item.duration.nights}Nights
+          </div>
+          
+          <Image 
+            src={item.imageURL} // Using your schema field
+            alt={item.title} 
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
         </div>
 
-        <div className="mb-4">
-          {item.priceDiscount && <span className="text-xs text-gray-400 line-through mr-1">US${item.priceDiscount}</span>}
-          <div className="flex items-baseline gap-1">
-            <span className="text-orange-500 font-black text-xl">US${item.price}</span>
-            <span className="text-[10px] bg-orange-100 text-orange-600 px-2 py-0.5 rounded-lg font-bold uppercase tracking-wider">/night</span>
+        {/* --- CONTENT CARD --- */}
+        <motion.div 
+          className="relative z-20 -mt-10 ml-6 w-[100%] bg-white/95 backdrop-blur-xl rounded-3xl p-6 shadow-xl border border-white/50"
+          whileHover={{ y: -5, backgroundColor: "rgba(255, 255, 255, 1)" }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          {/* Title */}
+          <h3 className="font-black text-lg text-gray-900 leading-tight mb-2 line-clamp-2 group-hover:text-orange-500 transition-colors uppercase tracking-tighter">
+            {item.title}
+          </h3>
+          
+          {/* Itinerary / Cities */}
+          <div className="flex items-start text-gray-500 h-6 overflow-hidden">
+            <MapPin size={16} className="text-orange-500 shrink-0" />
+            <span className="text-xs font-bold line-clamp-2">{citiesList}</span>
           </div>
-        </div>
 
-        <div className="flex items-center gap-2">
-          <div className="flex items-center gap-1 bg-gray-900 text-white px-2.5 py-1 rounded-lg text-xs font-bold">
-            <Star size={12} fill="#fbbf24" className="text-yellow-400" />
-            {item.rating}
+          {/* Date Info */}
+          <div className="flex items-center gap-2 text-gray-400 border-b border-gray-100">
+            <Calendar size={14} className="text-gray-400" />
+            <span className="text-[10px] font-black uppercase tracking-widest">
+              {formatDate(item.startDate)} - {formatDate(item.endDate)}
+            </span>
           </div>
-          <span className="text-gray-400 text-[11px] font-medium">({item.reviews} reviews)</span>
-        </div>
+
+          {/* 3. ITINERARY SECTION: The Dashed City Row */}
+        <div className="px-2 my-2 bg-gray-50/50 rounded-2xl border-y border-dashed border-red-200 flex">
+          {item.itinerary.map((plan, i) => (
+            <React.Fragment key={i}>
+              <div className="flex items-center gap-2">
+                <span className="text-3xl font-black text-red-200">{plan.days}</span>
+                <div className="flex flex-col">
+                  <span className="text-[10px] text-gray-400 font-bold uppercase leading-none">Days in</span>
+                  <span className="text-[10px] text-[#0A2357] font-black">{plan.city}</span>
+                </div>
+              </div>
+              {i < item.itinerary.length - 1 && (
+                <div className="w-2 h-2 rounded-full bg-red-400 opacity-50 mx-1" />
+              )}
+            </React.Fragment>
+          ))}
+          </div>
+
+          {/* Price and Action */}
+          <div className="flex items-center justify-between">
+            <div className="flex flex-col">
+              <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Starting from</span>
+              <div className="flex items-baseline gap-1">
+                <span className="text-orange-500 font-black text-xl">₹{item.startingPrice}</span>
+                <span className="text-[9px] font-black text-gray-400 uppercase">/ person</span>
+              </div>
+            </div>
+
+            <div className="w-10 h-10 bg-gray-50 rounded-xl flex items-center justify-center text-gray-900 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">
+              <ArrowRight size={18} />
+            </div>
+          </div>
+        </motion.div>
       </motion.div>
-    </motion.div>
     </Link>
   );
 };

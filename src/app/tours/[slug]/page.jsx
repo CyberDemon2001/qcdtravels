@@ -10,6 +10,7 @@ import Footer from '@/components/Footer';
 const TourDetails = () => {
   const params = useParams();
   const slug = params.slug;
+  console.log("sdas", slug);
 
   // In a real app, you would fetch data here based on the slug. 
   // For now, we'll assume we have the data.

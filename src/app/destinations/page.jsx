@@ -20,7 +20,7 @@ const DESTINATIONS = [
     id: 2,
     name: "Thailand",
     count: "38 Tours",
-    image: "https://images.unsplash.com/photo-1528181304800-2f140819ad1c?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1583491470869-ca0b9fa90216?auto=format&fit=crop&w=800&q=80",
     slug: "thailand",
     description: "The land of smiles, temples, and turquoise waters."
   },
@@ -28,7 +28,7 @@ const DESTINATIONS = [
     id: 3,
     name: "India",
     count: "56 Tours",
-    image: "https://images.unsplash.com/photo-1524492707947-2f85a64319bb?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1733805569810-36f5bad3fbad?auto=format&fit=crop&w=800&q=80",
     slug: "india",
     description: "A land of cultural heritage and vibrant diversity."
   },

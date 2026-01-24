@@ -22,14 +22,14 @@ const DESTINATION_DETAILS = {
     name: "Thailand",
     tagline: "Land of Smiles and Serenity",
     about: "Thailand is a captivating blend of vibrant culture, stunning landscapes, and warm hospitality. From the bustling streets of Bangkok to the tranquil beaches of Phuket and the mountainous beauty of Chiang Mai, Thailand offers something for every traveler.",
-    image: "https://images.unsplash.com/photo-1528181304800-2f140819ad1c?auto=format&fit=crop&w=1920&q=80",
+    image: "https://images.unsplash.com/photo-1583491470869-ca0b9fa90216?auto=format&fit=crop&w=800&q=80",
     highlights: ["Exploring the Grand Palace", "Relaxing on Phi Phi Islands", "Trekking in Chiang Mai"]
   },
     india: {
     name: "India",
     tagline: "A Symphony of Colors and Cultures",
     about: "India is a land of incredible diversity, where ancient traditions coexist with modern innovation. From the majestic Taj Mahal to the spiritual ghats of Varanasi and the vibrant markets of Jaipur, India offers a sensory overload of sights, sounds, and flavors.",
-    image: "https://images.unsplash.com/photo-1524492707947-2f85a64319bb?auto=format&fit=crop&w=1920&q=80",
+    image: "https://images.unsplash.com/photo-1733805569810-36f5bad3fbad?auto=format&fit=crop&w=800&q=80",
     highlights: ["Visiting the Taj Mahal", "Experiencing Ganga Aarti in Varanasi", "Exploring Jaipur's Palaces"]
   },
     london: {
