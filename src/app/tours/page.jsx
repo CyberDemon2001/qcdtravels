@@ -223,7 +223,7 @@ const AllToursPage = () => {
       <section className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
         
         {/* Filter Chips */}
-        <div className="flex flex-wrap items-center gap-3 mb-10">
+        {/* <div className="flex flex-wrap items-center gap-3 mb-10">
           <button className="flex items-center gap-2 px-6 py-3 bg-black text-white rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-orange-500 transition-all active:scale-95 shadow-lg shadow-black/10">
             <SlidersHorizontal size={14} /> Filter Results
           </button>
@@ -232,7 +232,7 @@ const AllToursPage = () => {
               {cat}
             </button>
           ))}
-        </div>
+        </div> */}
 
         {/* Results Info */}
         <div className="mb-12 flex items-center gap-4">

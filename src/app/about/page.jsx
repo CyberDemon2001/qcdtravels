@@ -51,15 +51,15 @@ const AboutPage = () => {
       </section>
 
       {/* --- VISION & MISSION SECTION --- */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-10 lg:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative h-[600px] w-full rounded-[3rem] overflow-hidden z-10">
+            <div className="relative h-[400px] lg:h-[600px] w-full rounded-[3rem] overflow-hidden z-10">
               <Image 
                 src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&w=800&q=80"
                 alt="Traveler looking at mountains"
@@ -80,7 +80,7 @@ const AboutPage = () => {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="lg:space-y-8 space-y-8"
           >
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 uppercase tracking-tighter">
               Why We <span className="text-orange-500">Started</span>
@@ -108,9 +108,9 @@ const AboutPage = () => {
       </section>
 
       {/* --- CORE VALUES --- */}
-      <section className="bg-gray-50 py-24">
+      <section className="bg-gray-50 py-10 lg:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 lg:mb-16">
             <h2 className="text-4xl font-black text-gray-900 uppercase tracking-tighter">Our Core <span className="text-orange-500">Values</span></h2>
           </div>
           
@@ -123,7 +123,7 @@ const AboutPage = () => {
               <motion.div 
                 key={idx}
                 whileHover={{ y: -10 }}
-                className="bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-xl"
+                className="bg-white p-6 rounded-[2.5rem] border border-gray-100 shadow-xl"
               >
                 <div className={`w-12 h-12 ${value.color} rounded-2xl flex items-center justify-center mb-6 font-black`}>
                   0{idx + 1}

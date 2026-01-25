@@ -218,7 +218,7 @@ export default function ChatBot({ open, onClose, onOpen }) {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-1000">
+    <div className="fixed bottom-2 right-2 z-1000">
       <AnimatePresence mode="wait">
         {open ? (
           /* --- CHAT WINDOW --- */
@@ -450,7 +450,8 @@ export default function ChatBot({ open, onClose, onOpen }) {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="relative w-75 h-112.5 overflow-hidden"
+              className="relative  w-40 h-60
+                  lg:w-50 lg:h-80 overflow-hidden"
             >
               <Image
                 src={traveldidiImage}

@@ -81,7 +81,7 @@ const TravelCarousel = () => {
               </span>
             </h1>
 
-            <p className="text-lg max-w-md text-gray-300 leading-relaxed mb-10">
+            <p className="text-lg max-w-md text-gray-300 leading-relaxed mb-6 lg:mb-10">
               {SLIDES[activeIndex].description}
             </p>
 
@@ -93,7 +93,7 @@ const TravelCarousel = () => {
       </div>
 
       {/* 3. Swiper logic remains mostly the same, but use <Image /> for cards too */}
-      <div className="absolute right-0 bottom-12 z-20 w-9/20 overflow-visible">
+      <div className="absolute right-0 bottom-24 lg:bottom-12 z-20 w-1/2 lg:w-9/20 overflow-visible">
         <Swiper
           modules={[EffectCoverflow, Navigation, Autoplay]}
           effect={'coverflow'}
@@ -113,7 +113,7 @@ const TravelCarousel = () => {
         >
           {SLIDES.map((slide) => (
             <SwiperSlide key={slide.id} className="rounded-3xl overflow-hidden group">
-              <div className="relative aspect-[3/4] rounded-3xl overflow-hidden border border-white/20 shadow-2xl transition-transform duration-500 group-hover:scale-105">
+              <div className="relative aspect-[13/20] lg:aspect-[3/4] rounded-3xl overflow-hidden border border-white/20 shadow-2xl transition-transform duration-500 group-hover:scale-105">
                 <Image 
                   src={slide.image} 
                   alt={slide.location}
