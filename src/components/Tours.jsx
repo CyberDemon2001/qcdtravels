@@ -122,7 +122,7 @@ const Tours = () => {
 
       {/* Custom Pagination Dots */}
       <div className="flex justify-center gap-3 mt-4">
-        {TOURS.map((_, index) => (
+        {tours.map((_, index) => (
           <motion.div
             key={index}
             className={`h-2.5 rounded-full transition-all duration-500 ${
