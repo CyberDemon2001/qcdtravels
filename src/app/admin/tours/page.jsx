@@ -62,7 +62,7 @@ export default function ToursPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#FDFDFF] text-slate-900">
+    <main className="min-h-screen bg-[#FDFDFF] text-slate-900 mt-10">
       {/* HEADER SECTION */}
       <header className="sticky top-0 z-30 bg-white/80 backdrop-blur-md border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6 py-6 lg:px-12 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
