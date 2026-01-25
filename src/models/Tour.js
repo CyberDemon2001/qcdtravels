@@ -24,12 +24,17 @@ const TourSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
-     location: {
+    slug: {
+      type: String,
+      unique: true,
+      index: true,
+    },
+    location: {
       type: String,
       required: true,
       trim: true,
     },
-     overview: {
+    overview: {
       type: String,
       required: true,
       trim: true,
@@ -57,9 +62,8 @@ const TourSchema = new mongoose.Schema(
       required: true,
     },
 
-      includes: {
+    includes: {
       type: [String],
-      required: true,
       default: [],
     },
     startingPrice: {
@@ -85,11 +89,21 @@ const TourSchema = new mongoose.Schema(
 );
 
 // Pre-save hook to generate slug from title
-TourSchema.pre("save", function (next) {
-  if (this.title && !this.slug) {
-    this.slug = slugify(this.title, { lower: true, strict: true });
+TourSchema.pre("save", async function () {
+  if (!this.isModified("title")) return;
+
+  let baseSlug = slugify(this.title, { lower: true, strict: true });
+  let slug = baseSlug;
+  let count = 1;
+
+  while (await mongoose.models.Tour.exists({ slug })) {
+    slug = `${baseSlug}-${count++}`;
   }
-  next();
+
+  this.slug = slug;
 });
+
+
+
 
 export default mongoose.models.Tour || mongoose.model("Tour", TourSchema);
