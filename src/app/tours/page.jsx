@@ -11,6 +11,7 @@ const TOURS = [
   {
     id: 1,
     title: "London Westminster Experience",
+    location: "Westminster, London, UK",
     overview:
       "Explore the heart of London with our premium Westminster experience. From the historic Big Ben to the majesty of Westminster Abbey, this tour offers an intimate look at the city's most iconic landmarks.",
     imageURL:
@@ -26,6 +27,12 @@ const TOURS = [
       { city: "Westminster", days: 1 },
       { city: "London City", days: 2 },
     ],
+    includes: [
+      "Expert Local Guide",
+      "Entry Fees to Abbey",
+      "Private Transport",
+      "Lunch & Drinks",
+    ],
     available: true,
     isActive: true,
   },
@@ -33,6 +40,7 @@ const TOURS = [
   {
     id: 2,
     title: "Paris Romantic Getaway",
+    location: "Paris, France",
     overview:
       "Indulge in the romance of Paris with a carefully curated getaway featuring the Eiffel Tower, charming cafés, and unforgettable city views. Perfect for couples seeking elegance and culture.",
     imageURL:
@@ -45,6 +53,12 @@ const TOURS = [
     endDate: "2026-06-04T00:00:00.000Z",
     startingPrice: 8900,
     itinerary: [{ city: "Paris", days: 3 }],
+    includes: [
+      "Romantic Seine Cruise",
+      "Eiffel Tower Visit",
+      "Local Guide",
+      "Breakfast Included",
+    ],
     available: true,
     isActive: true,
   },
@@ -52,6 +66,7 @@ const TOURS = [
   {
     id: 3,
     title: "New York City Adventure",
+    location: "Manhattan, New York, USA",
     overview:
       "Experience the energy of New York City with an action-packed adventure through Manhattan. From iconic skyscrapers to vibrant neighborhoods, this tour captures the true NYC spirit.",
     imageURL:
@@ -64,6 +79,12 @@ const TOURS = [
     endDate: "2026-07-20T00:00:00.000Z",
     startingPrice: 12900,
     itinerary: [{ city: "Manhattan", days: 5 }],
+    includes: [
+      "City Sightseeing Pass",
+      "Professional Guide",
+      "Public Transport Card",
+      "Welcome Dinner",
+    ],
     available: true,
     isActive: true,
   },
@@ -71,6 +92,7 @@ const TOURS = [
   {
     id: 4,
     title: "Tokyo Modern Escape",
+    location: "Tokyo, Japan",
     overview:
       "Dive into the future-forward charm of Tokyo with a modern escape through Shibuya and the city’s cultural hotspots. A perfect blend of tradition, technology, and urban excitement.",
     imageURL:
@@ -85,6 +107,12 @@ const TOURS = [
     itinerary: [
       { city: "Shibuya", days: 3 },
       { city: "Tokyo City", days: 3 },
+    ],
+    includes: [
+      "Airport Transfers",
+      "Local Japanese Guide",
+      "Cultural Experience Tickets",
+      "Daily Breakfast",
     ],
     available: true,
     isActive: true,
