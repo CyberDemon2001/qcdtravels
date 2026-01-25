@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Facebook, Twitter, Instagram, Youtube, Award, Send } from 'lucide-react';
-import logo from "../../public/assets/logo.png"; // Next.js optimizes this import automatically
+import logo from "../../public/assets/logo1.png"; // Next.js optimizes this import automatically
 
 const Footer = () => {
   const footerSections = [
