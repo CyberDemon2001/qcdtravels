@@ -77,7 +77,7 @@ const TOURS = [
     overview:
       "Dive into the future-forward charm of Tokyo with a modern escape through Shibuya and the city’s cultural hotspots. A perfect blend of tradition, technology, and urban excitement.",
     imageURL:
-      "https://images.unsplash.com/photo-1551882547-ff43c61f3c33?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80",
     duration: {
       days: 6,
       nights: 5,

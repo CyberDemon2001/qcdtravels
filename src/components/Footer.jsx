@@ -23,10 +23,10 @@ const Footer = () => {
   const destinations = ["Varanasi", "Ladakh", "Munnar", "Goa", "Kerala"];
 
   return (
-    <footer className="relative mt-32 font-['Inter_Variable']">
+    <footer className="relative font-['Inter_Variable']">
       
       {/* 1. Decorative Floating Plane */}
-      <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-full flex justify-center z-20 pointer-events-none">
+      {/* <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-full flex justify-center z-20 pointer-events-none">
         <div className="relative w-48 md:w-72 h-32 animate-float">
           <Image 
             src="https://www.pngall.com/wp-content/uploads/2/Airplane-PNG-High-Quality-Image.png" 
@@ -36,13 +36,13 @@ const Footer = () => {
             priority={false}
           />
         </div>
-      </div>
+      </div> */}
 
       {/* 2. Main Footer Body */}
       <div 
         className="bg-gray-900 text-white pt-24 pb-12 relative overflow-hidden"
         style={{ 
-          clipPath: 'polygon(0 10%, 50% 0, 100% 10%, 100% 100%, 0 100%)',
+          // clipPath: 'polygon(0 10%, 50% 0, 100% 10%, 100% 100%, 0 100%)',
           backgroundImage: `linear-gradient(to bottom, rgba(249, 115, 22, 0.1), rgba(17, 24, 39, 0.95)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2070&q=80')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',

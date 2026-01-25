@@ -137,7 +137,7 @@ const AboutPage = () => {
       </section>
 
       {/* --- TEAM SECTION --- */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-24">
+      {/* <section className="max-w-7xl mx-auto px-6 lg:px-12 py-24">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-xl">
              <h2 className="text-4xl md:text-6xl font-black text-gray-900 uppercase tracking-tighter leading-none">
@@ -163,7 +163,7 @@ const AboutPage = () => {
             </motion.div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </main>
