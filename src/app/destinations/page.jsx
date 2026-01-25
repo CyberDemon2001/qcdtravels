@@ -89,7 +89,7 @@ const DestinationsPage = () => {
       </section>
 
       {/* --- GRID LAYOUT --- */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-24">
+      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-12 lg:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {DESTINATIONS.map((dest, idx) => (
             <Link key={dest.id} href={`/destinations/${dest.slug}`}>
