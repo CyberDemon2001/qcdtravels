@@ -93,7 +93,7 @@ const Loader = ({ finishLoading }) => {
             <span className="ml-2 text-gray-900 font-serif italic font-medium">TRAVELS</span>
           </h2>
           <p className="text-gray-400 font-bold text-[10px] tracking-[0.3em] uppercase mb-8">
-            We Simplify It
+            Ek Trip Toh Banta Hai
           </p>
         </motion.div>
         

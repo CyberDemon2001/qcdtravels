@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import { Heart, MapPin, Star, ChevronLeft, ChevronRight, Award, Plane } from 'lucide-react';
@@ -10,93 +10,25 @@ import ToursCard from './ToursCard';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-const TOURS = [
-  {
-    id: 1,
-    title: "London Westminster Experience",
-    overview:
-      "Explore the heart of London with our premium Westminster experience. From the historic Big Ben to the majesty of Westminster Abbey, this tour offers an intimate look at the city's most iconic landmarks.",
-    imageURL:
-      "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80",
-    duration: {
-      days: 4,
-      nights: 3,
-    },
-    startDate: "2026-05-10T00:00:00.000Z",
-    endDate: "2026-05-14T00:00:00.000Z",
-    startingPrice: 7200,
-    itinerary: [
-      { city: "Westminster", days: 1 },
-      { city: "London City", days: 2 },
-    ],
-    available: true,
-    isActive: true,
-  },
-
-  {
-    id: 2,
-    title: "Paris Romantic Getaway",
-    overview:
-      "Indulge in the romance of Paris with a carefully curated getaway featuring the Eiffel Tower, charming cafés, and unforgettable city views. Perfect for couples seeking elegance and culture.",
-    imageURL:
-      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80",
-    duration: {
-      days: 3,
-      nights: 2,
-    },
-    startDate: "2026-06-01T00:00:00.000Z",
-    endDate: "2026-06-04T00:00:00.000Z",
-    startingPrice: 8900,
-    itinerary: [{ city: "Paris", days: 3 }],
-    available: true,
-    isActive: true,
-  },
-
-  {
-    id: 3,
-    title: "New York City Adventure",
-    overview:
-      "Experience the energy of New York City with an action-packed adventure through Manhattan. From iconic skyscrapers to vibrant neighborhoods, this tour captures the true NYC spirit.",
-    imageURL:
-      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80",
-    duration: {
-      days: 5,
-      nights: 4,
-    },
-    startDate: "2026-07-15T00:00:00.000Z",
-    endDate: "2026-07-20T00:00:00.000Z",
-    startingPrice: 12900,
-    itinerary: [{ city: "Manhattan", days: 5 }],
-    available: true,
-    isActive: true,
-  },
-
-  {
-    id: 4,
-    title: "Tokyo Modern Escape",
-    overview:
-      "Dive into the future-forward charm of Tokyo with a modern escape through Shibuya and the city’s cultural hotspots. A perfect blend of tradition, technology, and urban excitement.",
-    imageURL:
-      "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80",
-    duration: {
-      days: 6,
-      nights: 5,
-    },
-    startDate: "2026-09-10T00:00:00.000Z",
-    endDate: "2026-09-16T00:00:00.000Z",
-    startingPrice: 19900,
-    itinerary: [
-      { city: "Shibuya", days: 3 },
-      { city: "Tokyo City", days: 3 },
-    ],
-    available: true,
-    isActive: true,
-  },
-];
-
 
 const Tours = () => {
-  const [activeIndex, setActiveIndex] = React.useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [tours, setTours] = useState([]);
+
+  const fetchTours = async () => {
+      try {
+        const res = await fetch("/api/tours", { cache: "no-store" });
+        const data = await res.json();
+        console.log("Fetched tours data:", data);
+        setTours(Array.isArray(data) ? data : []);
+      } catch (error) {
+        console.error("Failed to fetch tours", error);
+      }
+    };
+    
+    useEffect(() => {
+      fetchTours();
+    }, []);
 
   return (
     <div className="max-w-full mx-auto px-6 md:px-12 lg:px-24 py-24 font-['Inter_Variable'] relative bg-white">
@@ -180,7 +112,7 @@ const Tours = () => {
           }}
           className="pb-12"
         >
-          {TOURS.map((item, index) => (
+          {tours.map((item, index) => (
             <SwiperSlide key={item.id}>
               <ToursCard item={item} index={index} />
             </SwiperSlide>
