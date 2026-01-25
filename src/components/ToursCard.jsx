@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const ToursCard = ({ item, index }) => {
   // Generate SEO-friendly slug from the title
-  const slug = item.title.toLowerCase().replace(/ /g, '-');
+  const slug = item?.title.toLowerCase().replace(/ /g, '-');
 
   // Format the date to a readable string (e.g., "Jan 24, 2026")
   const formatDate = (dateString) => {
@@ -19,7 +19,8 @@ const ToursCard = ({ item, index }) => {
   };
 
   // Get a list of cities from the itinerary for the location string
-  const citiesList = item.itinerary?.map(plan => plan.city).join(' • ') || 'Various Locations';
+  const citiesList = item?.itinerary?.map(plan => plan?.city).join(' • ') || 'Various Locations';
+  console.log("gfhg", citiesList);
 
   return (
     <Link href={`/tours/${slug}`}>
@@ -34,7 +35,7 @@ const ToursCard = ({ item, index }) => {
         <div className="relative h-[280px] w-full rounded-[2.5rem] overflow-hidden shadow-2xl z-0 bg-slate-100">
           {/* Badge showing Days/Nights */}
           <div className="absolute top-2 left-1/2 -translate-x-1/2 z-30 px-3 py-1 rounded-2xl bg-orange-500 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-widest shadow-lg border border-white/10">
-            {item.duration.days}Days / {item.duration.nights}Nights
+            {item?.duration?.days}Days / {item?.duration?.nights}Nights
           </div>
           
           <Image 
