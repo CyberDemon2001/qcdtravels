@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../../public/assets/logo.png";
+import logo from "../../public/assets/logo1.png";
 
 const GlassNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
