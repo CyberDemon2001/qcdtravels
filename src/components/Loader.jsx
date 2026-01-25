@@ -40,37 +40,37 @@ const Loader = ({ finishLoading }) => {
           style={{ transformStyle: "preserve-3d" }}
         >
           {/* TOP - Quality (Green) */}
-          <div className="absolute inset-0 bg-[#008A45] border border-[#00753a] flex items-center justify-center shadow-inner" 
+          <div className="absolute inset-0 bg-orange-400 border border-orange-800 flex items-center justify-center shadow-inner" 
                style={{ transform: "rotateX(90deg) translateZ(40px)" }}>
             <span className="text-[10px] text-white font-black uppercase tracking-tighter">Quality</span>
           </div>
           
           {/* BOTTOM - Quality (Green) */}
-          <div className="absolute inset-0 bg-[#008A45] border border-[#00753a] flex items-center justify-center shadow-inner" 
+          <div className="absolute inset-0 bg-orange-400 border border-orange-500 flex items-center justify-center shadow-inner" 
                style={{ transform: "rotateX(-90deg) translateZ(40px)" }}>
              <span className="text-[10px] text-white font-black uppercase tracking-tighter">Quality</span>
           </div>
 
           {/* FRONT - Delivery (Red) */}
-          <div className="absolute inset-0 bg-[#ED1C24] border border-[#d11920] flex items-center justify-center shadow-inner" 
+          <div className="absolute inset-0 bg-orange-700 border border-orange-800 flex items-center justify-center shadow-inner" 
                style={{ transform: "translateZ(40px)" }}>
             <span className="text-[10px] text-white font-black uppercase tracking-tighter">Delivery</span>
           </div>
 
           {/* BACK - Delivery (Red) */}
-          <div className="absolute inset-0 bg-[#ED1C24] border border-[#d11920] flex items-center justify-center shadow-inner" 
+          <div className="absolute inset-0 bg-orange-700 border border-orange-800 flex items-center justify-center shadow-inner" 
                style={{ transform: "rotateY(180deg) translateZ(40px)" }}>
             <span className="text-[10px] text-white font-black uppercase tracking-tighter">Delivery</span>
           </div>
 
           {/* LEFT - Cost (Blue) */}
-          <div className="absolute inset-0 bg-[#0054A6] border border-[#00478c] flex items-center justify-center shadow-inner" 
+          <div className="absolute inset-0 bg-teal-700 border border-teal-800 flex items-center justify-center shadow-inner" 
                style={{ transform: "rotateY(-90deg) translateZ(40px)" }}>
             <span className="text-[10px] text-white font-black uppercase tracking-tighter">Cost</span>
           </div>
 
           {/* RIGHT - Cost (Blue) */}
-          <div className="absolute inset-0 bg-[#0054A6] border border-[#00478c] flex items-center justify-center shadow-inner" 
+          <div className="absolute inset-0 bg-teal-700 border border-teal-800 flex items-center justify-center shadow-inner" 
                style={{ transform: "rotateY(90deg) translateZ(40px)" }}>
             <span className="text-[10px] text-white font-black uppercase tracking-tighter">Cost</span>
           </div>
@@ -87,9 +87,9 @@ const Loader = ({ finishLoading }) => {
           animate={{ opacity: 1, y: 0 }}
         >
           <h2 className="text-4xl font-black tracking-tighter mb-1 flex items-center justify-center gap-1">
-            <span className="text-[#008A45]">Q</span>
-            <span className="text-[#0054A6]">C</span>
-            <span className="text-[#ED1C24]">D</span>
+            <span className="text-teal-700">Q</span>
+            <span className="text-orange-400">C</span>
+            <span className="text-orange-600">D</span>
             <span className="ml-2 text-gray-900 font-serif italic font-medium">TRAVELS</span>
           </h2>
           <p className="text-gray-400 font-bold text-[10px] tracking-[0.3em] uppercase mb-8">
@@ -100,7 +100,7 @@ const Loader = ({ finishLoading }) => {
         {/* Branded Progress Bar */}
         <div className="relative w-64 h-1.5 bg-gray-100 rounded-full overflow-hidden mx-auto mb-4">
           <motion.div 
-            className="absolute top-0 left-0 h-full bg-gradient-to-r from-[#008A45] via-[#0054A6] to-[#ED1C24]"
+            className="absolute top-0 left-0 h-full bg-gradient-to-r from-teal-700 via-orange-400 to-orange-700"
             initial={{ width: 0 }}
             animate={{ width: `${percent}%` }}
           />
