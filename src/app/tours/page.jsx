@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Search, SlidersHorizontal, Award, Plane, X } from 'lucide-react';
 import Image from 'next/image';
@@ -121,8 +121,25 @@ const TOURS = [
 
 const AllToursPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
-
-  const filteredTours = TOURS.filter(tour => 
+  const [tours, setTours] = useState([]);
+  
+  
+  const fetchTours = async () => {
+    try {
+      const res = await fetch("/api/tours", { cache: "no-store" });
+      const data = await res.json();
+      console.log("Fetched tours data:", data);
+      setTours(Array.isArray(data) ? data : []);
+    } catch (error) {
+      console.error("Failed to fetch tours", error);
+    }
+  };
+  
+  useEffect(() => {
+    fetchTours();
+  }, []);
+  
+  const filteredTours = tours.filter(tour => 
     tour.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     tour.location.toLowerCase().includes(searchQuery.toLowerCase())
   );

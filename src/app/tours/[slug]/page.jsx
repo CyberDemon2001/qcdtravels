@@ -1,99 +1,109 @@
 "use client";
-import React from 'react';
-import { useParams } from 'next/navigation';
-import { motion } from 'framer-motion';
-import { MapPin, Star, Clock, Users, ShieldCheck, CheckCircle2, Plane } from 'lucide-react';
-import Image from 'next/image';
-import GlassNavbar from '@/components/GlassNavbar';
-import Footer from '@/components/Footer';
+import React from "react";
+import { useSearchParams } from "next/navigation";
+import { CheckCircle2, Clock, Users, Plane, ShieldCheck, Star, MapPin } from "lucide-react";
+import Image from "next/image";
+import GlassNavbar from "@/components/GlassNavbar";
+import Footer from "@/components/Footer";
 
 const TourDetails = () => {
-  const params = useParams();
-  const slug = params.slug;
-  console.log("sdas", slug);
+  const searchParams = useSearchParams();
+  const dataParam = searchParams.get("data");
 
-  // In a real app, you would fetch data here based on the slug. 
-  // For now, we'll assume we have the data.
+  // Parse the passed tour data
+  const tour = dataParam ? JSON.parse(decodeURIComponent(dataParam)) : null;
+
+  if (!tour) return <div>Tour data not found!</div>;
+
   return (
     <main className="min-h-screen bg-white">
       <GlassNavbar />
-      
-      {/* 1. Hero Image Header */}
+
+      {/* HERO */}
       <section className="relative h-[60vh] w-full">
-        <Image 
-          src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=80"
-          alt="Tour Detail"
-          fill
-          className="object-cover"
-          priority
-        />
+        <Image src={tour.imageURL} alt={tour.title} fill className="object-cover" />
         <div className="absolute inset-0 bg-black/30" />
       </section>
 
-      {/* 2. Content Section */}
+      {/* CONTENT */}
       <section className="max-w-7xl mx-auto px-6 lg:px-12 py-16 grid grid-cols-1 lg:grid-cols-3 gap-12">
-        
-        {/* Left Column: Details */}
+        {/* LEFT */}
         <div className="lg:col-span-2 space-y-8">
           <div>
             <div className="flex items-center gap-2 text-orange-500 font-black text-xs uppercase tracking-widest mb-4">
               <Star size={14} fill="currentColor" /> 4.9 (2,612 Reviews)
             </div>
             <h1 className="text-4xl md:text-6xl font-black text-gray-900 tracking-tighter uppercase leading-none">
-              London <span className="text-orange-500 font-serif italic font-medium">Westminster</span> Experience
+              {tour.title}
             </h1>
             <div className="flex items-center gap-2 mt-6 text-gray-500">
               <MapPin size={18} className="text-orange-500" />
-              <span className="font-bold">Westminster, London, UK</span>
+              <span className="font-bold">{tour.itinerary.map((p) => p.city).join(", ")}</span>
             </div>
           </div>
 
-          {/* Quick Info Bar */}
+          {/* Quick Info */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-8 border-y border-gray-100">
             <div className="flex flex-col">
-              <span className="text-gray-400 text-[10px] uppercase font-black tracking-widest">Duration</span>
-              <span className="font-bold text-gray-900 flex items-center gap-2"><Clock size={16}/> 8 Hours</span>
+              <span className="text-gray-400 text-[10px] uppercase font-black tracking-widest">
+                Duration
+              </span>
+              <span className="font-bold text-gray-900 flex items-center gap-2">
+                <Clock size={16} /> {tour.duration.days} Days
+              </span>
             </div>
             <div className="flex flex-col">
-              <span className="text-gray-400 text-[10px] uppercase font-black tracking-widest">Group Size</span>
-              <span className="font-bold text-gray-900 flex items-center gap-2"><Users size={16}/> 15 People</span>
+              <span className="text-gray-400 text-[10px] uppercase font-black tracking-widest">
+                Group Size
+              </span>
+              <span className="font-bold text-gray-900 flex items-center gap-2">
+                <Users size={16} /> 15 People
+              </span>
             </div>
             <div className="flex flex-col">
-              <span className="text-gray-400 text-[10px] uppercase font-black tracking-widest">Tour Type</span>
-              <span className="font-bold text-gray-900 flex items-center gap-2"><Plane size={16}/> Sightseeing</span>
+              <span className="text-gray-400 text-[10px] uppercase font-black tracking-widest">
+                Tour Type
+              </span>
+              <span className="font-bold text-gray-900 flex items-center gap-2">
+                <Plane size={16} /> Sightseeing
+              </span>
             </div>
             <div className="flex flex-col">
-              <span className="text-gray-400 text-[10px] uppercase font-black tracking-widest">Safety</span>
-              <span className="font-bold text-gray-900 flex items-center gap-2"><ShieldCheck size={16}/> Verified</span>
+              <span className="text-gray-400 text-[10px] uppercase font-black tracking-widest">
+                Safety
+              </span>
+              <span className="font-bold text-gray-900 flex items-center gap-2">
+                <ShieldCheck size={16} /> Verified
+              </span>
             </div>
           </div>
 
+          {/* Overview */}
           <div className="space-y-4">
             <h3 className="text-2xl font-black uppercase tracking-tight">Overview</h3>
-            <p className="text-gray-600 leading-relaxed text-lg">
-              Explore the heart of London with our premium Westminster experience. From the historic Big Ben to the majesty of Westminster Abbey, this tour offers an intimate look at the city's most iconic landmarks.
-            </p>
+            <p className="text-gray-600 leading-relaxed text-lg">{tour.overview || "No description available."}</p>
           </div>
 
+          {/* Itinerary */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-black uppercase tracking-tight">What's Included</h3>
+            <h3 className="text-2xl font-black uppercase tracking-tight">Itinerary</h3>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {['Expert Local Guide', 'Entry Fees to Abbey', 'Private Transport', 'Lunch & Drinks'].map((item) => (
-                <li key={item} className="flex items-center gap-3 text-gray-700 font-medium">
-                  <CheckCircle2 className="text-orange-500" size={20} /> {item}
+              {tour.includes.map((include, i) => (
+                <li key={i} className="flex items-center gap-3 text-gray-700 font-medium">
+                  <CheckCircle2 className="text-orange-500" size={20} /> {include}
                 </li>
               ))}
             </ul>
           </div>
         </div>
 
-        {/* Right Column: Booking Card (Sticky) */}
+        {/* RIGHT: Booking Card */}
         <div className="lg:col-span-1">
           <div className="sticky top-32 bg-white rounded-[2.5rem] border border-gray-100 shadow-2xl p-8 space-y-6">
             <div className="flex justify-between items-end">
               <div>
                 <span className="text-gray-400 text-xs font-black uppercase tracking-widest">From</span>
-                <div className="text-4xl font-black text-orange-500">$72.00</div>
+                <div className="text-4xl font-black text-orange-500">₹{tour.startingPrice}</div>
               </div>
               <span className="text-gray-400 text-sm font-bold pb-1">/ person</span>
             </div>
@@ -112,7 +122,9 @@ const TourDetails = () => {
             <button className="w-full py-5 bg-orange-500 hover:bg-black text-white rounded-2xl font-black uppercase tracking-[0.2em] text-xs transition-all duration-500 shadow-xl shadow-orange-500/20">
               Book This Tour
             </button>
-            <p className="text-center text-gray-400 text-[10px] font-bold uppercase tracking-widest">No hidden fees • Instant Confirmation</p>
+            <p className="text-center text-gray-400 text-[10px] font-bold uppercase tracking-widest">
+              No hidden fees • Instant Confirmation
+            </p>
           </div>
         </div>
       </section>
