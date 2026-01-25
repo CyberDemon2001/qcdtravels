@@ -29,6 +29,21 @@ export default function ToursPage() {
     }
   };
 
+  const deleteTour = async (tourId) => {
+    if (!confirm("Are you sure you want to delete this tour?")) return;
+    try {
+      const res = await fetch(`/api/tours?id=${tourId}`, {
+        method: "DELETE",
+      });
+      const data = await res.json();
+      if (data.success) {
+        setTours((prev) => prev.filter((tour) => tour._id !== tourId));
+      }
+    } catch (error) {
+      console.error("Failed to delete tour", error);
+    }
+  };
+
   useEffect(() => {
     fetchTours().finally(() => setLoading(false));
   }, []);
@@ -150,7 +165,7 @@ export default function ToursPage() {
                     Edit
                   </button>
 
-                  <button className="p-2.5 rounded-xl bg-red-50 text-red-500 hover:bg-red-500 hover:text-white">
+                  <button onClick={() => deleteTour(tour._id)} className="p-2.5 rounded-xl bg-red-50 text-red-500 hover:bg-red-500 hover:text-white">
                     <Trash2 size={18} />
                   </button>
                 </div>
