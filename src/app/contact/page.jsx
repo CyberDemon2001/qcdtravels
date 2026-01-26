@@ -1,14 +1,71 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, MessageSquare } from "lucide-react";
 import GlassNavbar from "@/components/GlassNavbar";
 import Footer from "@/components/Footer";
+import BookingSuccessModal from "@/components/BookingSuccessModal"; // Reusable Modal
+import { sendEmail } from "@/lib/emailjs";
 
 const ContactPage = () => {
+  // 1. States for Form, Loading, and Modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    destination: "Indonesia",
+    message: "",
+  });
+
+  // 2. Form Submission Handler
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      await sendEmail({
+        name: formData.name,
+        email: formData.email,
+        subject: `New Contact Inquiry: ${formData.destination}`,
+        message: `
+          CONTACT FORM INQUIRY
+          ---------------------
+          Full Name: ${formData.name}
+          Email Address: ${formData.email}
+          Interested Destination: ${formData.destination}
+          
+          User Message:
+          ${formData.message}
+        `,
+      });
+      setIsModalOpen(true); // Open the reusable modal on success
+      // Reset form
+      setFormData({ name: "", email: "", destination: "Indonesia", message: "" });
+    } catch (error) {
+      console.error("Email failed:", error);
+      alert("Something went wrong. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <main className="min-h-screen bg-white">
       <GlassNavbar />
+      
+      {/* 3. Reusable Modal Implementation */}
+      <BookingSuccessModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        title="Message Sent!"
+        message="Thank you for reaching out. Our travel experts will review your message and get back to you within 24 hours."
+      />
 
       {/* Hero Header Section */}
       <section className="relative pt-32 pb-16 bg-black overflow-hidden">
@@ -65,64 +122,42 @@ const ContactPage = () => {
             </div>
 
             <div className="space-y-8">
-              {/* Phone */}
               <div className="flex gap-6 items-start">
                 <div className="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center shrink-0">
                   <Phone className="text-orange-500" />
                 </div>
                 <div>
-                  <h3 className="font-black text-gray-900 uppercase text-sm tracking-widest">
-                    Call Us
-                  </h3>
-                  <a
-                    href="tel:+919810655656"
-                    className="text-lg lg:text-xl font-bold text-gray-800 hover:text-orange-500 transition"
-                  >
+                  <h3 className="font-black text-gray-900 uppercase text-sm tracking-widest">Call Us</h3>
+                  <a href="tel:+919810655656" className="text-lg lg:text-xl font-bold text-gray-800 hover:text-orange-500 transition">
                     +91 9810-655-656
                   </a>
-                  <p className="text-gray-500 text-sm">
-                    Mon–Fri from 9am to 6pm
-                  </p>
+                  <p className="text-gray-500 text-sm">Mon–Fri from 9am to 6pm</p>
                 </div>
               </div>
 
-              {/* Email */}
               <div className="flex gap-6 items-start">
                 <div className="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center shrink-0">
                   <Mail className="text-orange-500" />
                 </div>
                 <div>
-                  <h3 className="font-black text-gray-900 uppercase text-sm tracking-widest">
-                    Email Us
-                  </h3>
-                  <a
-                    href="mailto:travel@qcdtravels.com"
-                    className="text-lg lg:text-xl font-bold text-gray-800 hover:text-orange-500 transition"
-                  >
+                  <h3 className="font-black text-gray-900 uppercase text-sm tracking-widest">Email Us</h3>
+                  <a href="mailto:travel@qcdtravels.com" className="text-lg lg:text-xl font-bold text-gray-800 hover:text-orange-500 transition">
                     travel@qcdtravels.com
                   </a>
                   <p className="text-gray-500 text-sm">Online support 24/7</p>
                 </div>
               </div>
 
-              {/* Address */}
               <div className="flex gap-6 items-start">
                 <div className="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center shrink-0">
                   <MapPin className="text-orange-500" />
                 </div>
                 <div>
-                  <h3 className="font-black text-gray-900 uppercase text-sm tracking-widest">
-                    Visit Office
-                  </h3>
-                  <a
-                    href="https://www.google.com/maps/search/?api=1&query=1301,+Pearl+Best+Heights+1,+Netaji+Subhash+Place,+Pitampura,+New+Delhi+110034"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-lg lg:text-xl font-bold text-gray-800 hover:text-orange-500 transition"
-                  >
+                  <h3 className="font-black text-gray-900 uppercase text-sm tracking-widest">Visit Office</h3>
+                  <p className="text-lg lg:text-xl font-bold text-gray-800">
                     1301, Pearl Best Heights 1, Netaji Subhash Place, Pitampura,
                     New Delhi, Delhi, 110034
-                  </a>
+                  </p>
                   <p className="text-gray-500 text-sm">Global HQ</p>
                 </div>
               </div>
@@ -136,60 +171,67 @@ const ContactPage = () => {
             viewport={{ once: true }}
             className="bg-gray-50 p-8 md:p-12 rounded-[2.5rem] border border-gray-100 shadow-2xl relative overflow-hidden"
           >
-            <form className="space-y-6 relative z-10">
+            <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-xs font-black uppercase tracking-widest text-gray-500 ml-2">
-                    Full Name
-                  </label>
+                  <label className="text-xs font-black uppercase tracking-widest text-gray-500 ml-2">Full Name</label>
                   <input
                     type="text"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({...formData, name: e.target.value})}
                     placeholder="John Doe"
-                    className="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all"
+                    className="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-orange-500 outline-none transition-all"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs font-black uppercase tracking-widest text-gray-500 ml-2">
-                    Email Address
-                  </label>
+                  <label className="text-xs font-black uppercase tracking-widest text-gray-500 ml-2">Email Address</label>
                   <input
                     type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
                     placeholder="john@example.com"
-                    className="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all"
+                    className="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-orange-500 outline-none transition-all"
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs font-black uppercase tracking-widest text-gray-500 ml-2">
-                  Interested Destination
-                </label>
-                <select className="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-orange-500 outline-none transition-all bg-white appearance-none">
-                  <option>Indonesia</option>
-                  <option>Thailand</option>
-                  <option>Europe</option>
-                  <option>Dubai</option>
+                <label className="text-xs font-black uppercase tracking-widest text-gray-500 ml-2">Interested Destination</label>
+                <select 
+                  value={formData.destination}
+                  onChange={(e) => setFormData({...formData, destination: e.target.value})}
+                  className="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-orange-500 outline-none bg-white"
+                >
+                  <option value="Indonesia">Indonesia</option>
+                  <option value="Thailand">Thailand</option>
+                  <option value="Europe">Europe</option>
+                  <option value="Dubai">Dubai</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs font-black uppercase tracking-widest text-gray-500 ml-2">
-                  Your Message
-                </label>
+                <label className="text-xs font-black uppercase tracking-widest text-gray-500 ml-2">Your Message</label>
                 <textarea
                   rows="4"
+                  required
+                  value={formData.message}
+                  onChange={(e) => setFormData({...formData, message: e.target.value})}
                   placeholder="Tell us about your dream trip..."
-                  className="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-orange-500 outline-none transition-all resize-none"
+                  className="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-orange-500 outline-none resize-none"
                 />
               </div>
 
-              <button className="w-full py-5 bg-orange-500 hover:bg-black text-white rounded-2xl font-black uppercase tracking-[0.2em] text-xs transition-all duration-500 flex items-center justify-center gap-3 group shadow-xl shadow-orange-500/20">
-                Send Message
-                <Send
-                  size={16}
-                  className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
-                />
+              <button 
+                type="submit"
+                disabled={loading}
+                className="w-full py-5 bg-orange-500 hover:bg-black text-white rounded-2xl font-black uppercase tracking-[0.2em] text-xs transition-all duration-500 flex items-center justify-center gap-3 group shadow-xl shadow-orange-500/20 disabled:opacity-50"
+              >
+                {loading ? "Sending..." : "Send Message"}
+                <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </button>
             </form>
           </motion.div>
