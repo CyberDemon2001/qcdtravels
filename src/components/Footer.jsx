@@ -57,9 +57,8 @@ const Footer = () => {
               />
               <p className="text-gray-400 text-xs font-medium flex items-center gap-2 justify-center md:justify-start">
                 <span className="bg-orange-500/20 p-1 rounded-full">
-                   <Award size={12} className="text-orange-500" />
                 </span>
-                Ek trip to banta hai! ✨
+                Ek trip to banta hai!
               </p>
             </div>
 
@@ -121,7 +120,7 @@ const Footer = () => {
           {/* Bottom Bar - Exact Same Structure */}
           <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10">
             <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-4 md:mb-0">
-              © {new Date().getFullYear()} QCD TRAVELS • EXPLORE THE UNKNOWN
+              © {new Date().getFullYear()} QCD TRAVELS • Ek Trip To Banta Hai!
             </p>
             <div className="flex gap-8 text-[10px] font-bold text-gray-500 uppercase tracking-widest">
                 <Link href="/privacy" className="hover:text-orange-500 transition-colors">Privacy Policy</Link>
