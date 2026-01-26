@@ -10,18 +10,18 @@ export const Header = () => {
 
         {/* Header Links */}
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-          <Link href="/admin/dashboard" className="hover:text-gray-300 transition">
+          {/* <Link href="/admin/dashboard" className="hover:text-gray-300 transition">
             Dashboard
-          </Link>
+          </Link> */}
           <Link href="/admin/tours" className="hover:text-gray-300 transition">
             Tours
           </Link>
-          <Link href="/admin/bookings" className="hover:text-gray-300 transition">
+          {/* <Link href="/admin/bookings" className="hover:text-gray-300 transition">
             Bookings
-          </Link>
-          <Link href="/admin/users" className="hover:text-gray-300 transition">
+          </Link> */}
+          {/* <Link href="/admin/users" className="hover:text-gray-300 transition">
             Users
-          </Link>
+          </Link> */}
         </nav>
       </div>
 

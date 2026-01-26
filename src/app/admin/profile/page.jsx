@@ -48,7 +48,7 @@ export default function ProfilePage() {
       </nav>
 
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto py-12 px-6">
+      <main className="max-w-full flex items-center justify-center mx-auto py-12 px-6">
         <div className="flex flex-col md:flex-row gap-12">
           
           {/* Sidebar: Profile Summary */}
@@ -60,29 +60,6 @@ export default function ProfilePage() {
             <p className="text-gray-500 text-sm">admin@qcdtravels.com</p>
             <div className="mt-4 inline-block px-3 py-1 bg-gray-100 text-gray-600 text-xs font-semibold rounded-full uppercase">
               Super Admin
-            </div>
-          </div>
-
-          {/* Settings List */}
-          <div className="w-full md:w-2/3 space-y-6">
-            <h2 className="text-sm font-bold uppercase tracking-wider text-gray-400">Settings</h2>
-            
-            <div className="divide-y divide-gray-200 bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
-              <button className="w-full flex items-center justify-between p-4 hover:bg-gray-50 transition-colors">
-                <div className="flex items-center gap-4">
-                  <Settings size={20} className="text-gray-400" />
-                  <span className="font-medium">System Preferences</span>
-                </div>
-                <ChevronRight size={16} className="text-gray-400" />
-              </button>
-
-              <button className="w-full flex items-center justify-between p-4 hover:bg-gray-50 transition-colors">
-                <div className="flex items-center gap-4">
-                  <Shield size={20} className="text-gray-400" />
-                  <span className="font-medium">Security & Privacy</span>
-                </div>
-                <ChevronRight size={16} className="text-gray-400" />
-              </button>
             </div>
           </div>
 
