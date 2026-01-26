@@ -33,7 +33,7 @@ export default function AdminLoginPage() {
         return;
       }
 
-      router.push("/admin/dashboard");
+      router.push("https://qcdtravels.vercel.app/admin/dashboard");
     } catch (err) {
       setLoading(false);
       setError("A connection error occurred.");
