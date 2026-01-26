@@ -7,7 +7,7 @@ import { Plane } from 'lucide-react';
 
 const Offers = () => {
   return (
-    <section className="relative w-full py-24 px-6 bg-gradient-to-br from-orange-500/80 via-white/50 to-orange-500/90 overflow-hidden font-['Inter_Variable']">
+    <section className="relative w-full py-10 lg:py-24 px-6 bg-gradient-to-br from-orange-500/80 via-white/50 to-orange-500/90 overflow-hidden font-['Inter_Variable']">
       
       {/* Background Decorative Text - Drifting animation */}
       <motion.div 

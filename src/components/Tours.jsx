@@ -31,7 +31,7 @@ const Tours = () => {
     }, []);
 
   return (
-    <div className="max-w-full mx-auto px-6 md:px-12 lg:px-24 py-24 font-['Inter_Variable'] relative bg-white">
+    <div className="max-w-full mx-auto px-6 md:px-12 lg:px-24 py-10 lg:py-24 font-['Inter_Variable'] relative bg-white">
       
       {/* Header Section */}
       <motion.div 

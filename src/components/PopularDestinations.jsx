@@ -5,43 +5,19 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { ChevronLeft, ChevronRight, ArrowRight, Plane, Award } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { DESTINATIONS } from '@/data/destinations';
+
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const DESTINATIONS = [
-  {
-    id: 1,
-    name: "New York",
-    image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    id: 2,
-    name: "India",
-    image: "https://images.unsplash.com/photo-1733805569810-36f5bad3fbad?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    id: 3,
-    name: "Thailand",
-    image: "https://images.unsplash.com/photo-1583491470869-ca0b9fa90216?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    id: 4,
-    name: "London",
-    image: "https://images.unsplash.com/photo-1520986606214-8b456906c813?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    id: 5,
-    name: "Dubai",
-    image: "https://images.unsplash.com/photo-1459787915554-b34915863013?auto=format&fit=crop&w=800&q=80",
-  },
-];
 
 const PopularDestinations = () => {
   return (
-    <section className="max-w-full mx-auto px-6 md:px-12 lg:px-24 py-24 bg-white overflow-hidden">
+    <section className="max-w-full mx-auto px-6 md:px-12 lg:px-24 py-10 lg:py-24 bg-white overflow-hidden">
       
       {/* Header Row */}
       <motion.div 
@@ -83,7 +59,7 @@ const PopularDestinations = () => {
             Join thousands of travelers exploring these top-rated world-class destinations this season.
           </motion.p>
         </div>
-        
+        <Link href="/destinations">
         <motion.button 
           className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-2xl flex items-center gap-4 transition-all duration-300 text-xs font-black shadow-lg uppercase tracking-widest"
           whileHover={{ y: -5 }}
@@ -95,6 +71,8 @@ const PopularDestinations = () => {
           View All
           <ArrowRight size={18} />
         </motion.button>
+        </Link>
+
       </motion.div>
 
       {/* Slider Container */}
@@ -123,6 +101,7 @@ const PopularDestinations = () => {
         >
           {DESTINATIONS.map((city, index) => (
             <SwiperSlide key={city.id}>
+              <Link key={city.id} href={`/destinations/${city.slug}`}>
               <motion.div 
                 className="relative h-[450px] rounded-[2.5rem] overflow-hidden group/card cursor-pointer"
                 initial={{ opacity: 0, y: 50 }}
@@ -154,6 +133,7 @@ const PopularDestinations = () => {
                 {/* Subtle gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 group-hover/card:opacity-80 transition-opacity duration-500" />
               </motion.div>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>

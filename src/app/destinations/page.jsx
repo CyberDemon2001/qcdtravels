@@ -6,49 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import GlassNavbar from '@/components/GlassNavbar';
 import Footer from '@/components/Footer';
-
-const DESTINATIONS = [
-  {
-    id: 1,
-    name: "Indonesia",
-    count: "42 Tours",
-    image: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&q=80",
-    slug: "indonesia",
-    description: "Tropical paradise with over 17,000 islands."
-  },
-  {
-    id: 2,
-    name: "Thailand",
-    count: "38 Tours",
-    image: "https://images.unsplash.com/photo-1583491470869-ca0b9fa90216?auto=format&fit=crop&w=800&q=80",
-    slug: "thailand",
-    description: "The land of smiles, temples, and turquoise waters."
-  },
-  {
-    id: 3,
-    name: "India",
-    count: "56 Tours",
-    image: "https://images.unsplash.com/photo-1733805569810-36f5bad3fbad?auto=format&fit=crop&w=800&q=80",
-    slug: "india",
-    description: "A land of cultural heritage and vibrant diversity."
-  },
-  {
-    id: 4,
-    name: "London",
-    count: "24 Tours",
-    image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80",
-    slug: "london",
-    description: "Classic European charm meets modern global culture."
-  },
-  {
-    id: 5,
-    name: "Dubai",
-    count: "31 Tours",
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80",
-    slug: "dubai",
-    description: "Unmatched luxury and futuristic architecture."
-  },
-];
+import { DESTINATIONS } from '@/data/destinations';
 
 const DestinationsPage = () => {
   const [hoveredId, setHoveredId] = useState(null);

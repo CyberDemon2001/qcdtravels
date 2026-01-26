@@ -8,50 +8,23 @@ import Link from 'next/link';
 import GlassNavbar from '@/components/GlassNavbar';
 import Footer from '@/components/Footer';
 import ToursCard from '@/components/ToursCard';
+import { DESTINATIONS } from '@/data/destinations';
 
-// Dummy data for example (You can later move this to a central file)
-const DESTINATION_DETAILS = {
-  indonesia: {
-    name: "Indonesia",
-    tagline: "The Emerald of the Equator",
-    about: "Indonesia is a land of breathtaking contrasts, where ancient traditions meet modern energy. From the mist-covered volcanoes of Java to the pristine shores of Bali and the rugged wilderness of Komodo, it offers a diverse tapestry of experiences.",
-    image: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=1920&q=80",
-    highlights: ["Island Hopping in Raja Ampat", "Cultural Immersion in Ubud", "Sunrise at Borobudur Temple"]
-  },
-    thailand: {
-    name: "Thailand",
-    tagline: "Land of Smiles and Serenity",
-    about: "Thailand is a captivating blend of vibrant culture, stunning landscapes, and warm hospitality. From the bustling streets of Bangkok to the tranquil beaches of Phuket and the mountainous beauty of Chiang Mai, Thailand offers something for every traveler.",
-    image: "https://images.unsplash.com/photo-1583491470869-ca0b9fa90216?auto=format&fit=crop&w=800&q=80",
-    highlights: ["Exploring the Grand Palace", "Relaxing on Phi Phi Islands", "Trekking in Chiang Mai"]
-  },
-    india: {
-    name: "India",
-    tagline: "A Symphony of Colors and Cultures",
-    about: "India is a land of incredible diversity, where ancient traditions coexist with modern innovation. From the majestic Taj Mahal to the spiritual ghats of Varanasi and the vibrant markets of Jaipur, India offers a sensory overload of sights, sounds, and flavors.",
-    image: "https://images.unsplash.com/photo-1733805569810-36f5bad3fbad?auto=format&fit=crop&w=800&q=80",
-    highlights: ["Visiting the Taj Mahal", "Experiencing Ganga Aarti in Varanasi", "Exploring Jaipur's Palaces"]
-  },
-    london: {
-    name: "London",
-    tagline: "Where History Meets Modernity",
-    about: "London is a city that seamlessly blends its rich history with contemporary culture. From iconic landmarks like the Tower of London and Buckingham Palace to vibrant neighborhoods like Shoreditch and Camden, London offers a dynamic experience for every visitor.",
-    image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1920&q=80",
-    highlights: ["Exploring the British Museum", "Cruising the Thames", "Visiting the West End Theatres"]
-  },
-    dubai: {
-    name: "Dubai",
-    tagline: "The City of Future",
-    about: "Dubai is a city of superlatives, where futuristic architecture meets desert mystique. From the towering Burj Khalifa to the luxurious Palm Jumeirah, Dubai offers an unparalleled blend of opulence, adventure, and cultural experiences.",
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1920&q=80",
-    highlights: ["Desert Safari Experience", "Visiting Burj Khalifa", "Shopping at Dubai Mall"]
-  },
-};
 
 const DestinationDetail = () => {
   const params = useParams();
-  const slug = params.slug;
-  const data = DESTINATION_DETAILS[slug] || DESTINATION_DETAILS['indonesia'];
+   const { slug } = useParams();
+  const data = DESTINATIONS.find(dest => dest.slug === slug);
+
+  if (!data) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center space-y-4">
+        <Info size={48} className="text-orange-500" />
+        <h1 className="text-2xl font-black uppercase">Destination not found!</h1>
+        <a href="/destinations" className="text-orange-500 font-bold underline">Return to Destinations</a>
+      </div>
+    );
+  }
 
   return (
     <main className="min-h-screen bg-white">

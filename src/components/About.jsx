@@ -11,7 +11,7 @@ import image3 from '../../public/assets/hero/image-3.jpg';
 
 const About = () => {
   return (
-    <section className="max-w-full mx-auto px-6 py-24 relative overflow-hidden bg-white">
+    <section className="max-w-full mx-auto px-6 py-10 lg:py-24 relative overflow-hidden bg-white">
       {/* Background Gradients */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange-500/80 via-white to-orange-500/80 pointer-events-none" />
       

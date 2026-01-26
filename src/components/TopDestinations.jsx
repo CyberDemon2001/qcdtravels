@@ -3,6 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import { MapPin, Star, Clock, ArrowRight, Award } from 'lucide-react';
 import { motion } from 'framer-motion';
+  import Link from 'next/link';
 
 const destinations = [
   {
@@ -36,7 +37,7 @@ const destinations = [
 
 const TopDestinations = () => {
   return (
-    <section className="px-6 md:px-12 lg:px-24 py-24 bg-white overflow-hidden">
+    <section className="px-6 md:px-12 lg:px-24 py-10 lg:py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
           
@@ -62,6 +63,7 @@ const TopDestinations = () => {
               From snow-capped peaks to tropical shores, discover locations handpicked for the traveler in you.
             </p>
 
+            {/* <Link href="/destinations">
             <motion.button 
               className="hidden lg:flex items-center gap-3 text-sm font-black text-gray-900 hover:text-orange-500 transition-all group"
               whileHover={{ x: 5 }}
@@ -71,6 +73,7 @@ const TopDestinations = () => {
                 <ArrowRight className="w-5 h-5" />
               </div>
             </motion.button>
+            </Link> */}
           </motion.div>
 
           {/* Right Side: Animated Grid */}
