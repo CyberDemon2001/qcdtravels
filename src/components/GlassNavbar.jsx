@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../../public/assets/logo1.png";
+import logo from "../../public/assets/logo.png";
 
 const GlassNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,7 +25,7 @@ const GlassNavbar = () => {
         <motion.div
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className={`relative rounded-[2rem] p-4 lg:px-8 py-3 flex items-center justify-between border transition-all duration-500 ${
+          className={`relative rounded-[2rem] p-4 lg:px-8 py-3 bg-white/40 flex items-center justify-between border transition-all duration-500 ${
             isScrolled
               ? "bg-white/80 backdrop-blur-xl border-gray-200 shadow-xl"
               : "bg-white/10 backdrop-blur-md border-white/20 shadow-lg"

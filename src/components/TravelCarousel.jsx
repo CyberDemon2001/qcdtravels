@@ -93,7 +93,7 @@ const TravelCarousel = () => {
       </div>
 
       {/* 3. Swiper logic remains mostly the same, but use <Image /> for cards too */}
-      <div className="absolute right-0 bottom-24 lg:bottom-12 z-20 w-1/2 lg:w-9/20 overflow-visible">
+      <div className="absolute right-0 bottom-24 lg:bottom-14 z-20 w-1/2 lg:w-9/20 overflow-visible">
         <Swiper
           modules={[EffectCoverflow, Navigation, Autoplay]}
           effect={'coverflow'}
