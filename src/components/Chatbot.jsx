@@ -358,13 +358,13 @@ export default function ChatBot({ open, onClose, onOpen }) {
             {/* Tooltip */}
             <div className="absolute -top-12 right-0 bg-white px-4 py-2 rounded-2xl shadow-xl border border-orange-100 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 whitespace-nowrap">
               <p className="text-orange-600 font-bold text-xs flex items-center gap-2">
-                Let's plan your trip! <Sparkles size={12} />
+                Ek Trip To Banta Hai!
               </p>
               <div className="absolute -bottom-1 right-6 w-2 h-2 bg-white border-r border-b border-orange-100 rotate-45" />
             </div>
 
             <div className="relative w-24 h-24 lg:w-28 lg:h-28">
-              <div className="absolute inset-0 bg-orange-400 rounded-full animate-ping opacity-20" />
+              <div className="absolute inset-0 bg-orange-500 rounded-full animate-ping opacity-50" />
               <div className="relative h-full w-full shadow-2xl overflow-hidden">
                 <Image
                   src={traveldidiImage}

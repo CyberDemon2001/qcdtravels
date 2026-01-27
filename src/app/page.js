@@ -32,7 +32,7 @@ export default function Home() {
   const closeChat = () => {
     setChatOpen(false);
     if (reopenTimerRef.current) clearTimeout(reopenTimerRef.current);
-    reopenTimerRef.current = setTimeout(() => setChatOpen(true), 50000);
+    reopenTimerRef.current = setTimeout(() => setChatOpen(true), 200000);
   };
 
   const openChat = () => setChatOpen(true);
