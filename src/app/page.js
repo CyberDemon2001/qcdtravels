@@ -13,6 +13,7 @@ import Features from "@/components/Features";
 import Footer from "@/components/Footer";
 import Loader from "@/components/Loader";
 import ChatBot from "@/components/Chatbot";
+import IndiaSpiritual from "@/components/IndiaSpritual";
 
 export default function Home() {
   // const [isLoading, setIsLoading] = useState(false);
@@ -47,10 +48,12 @@ export default function Home() {
             <GlassNavbar />
             <TravelCarousel />
             <PopularDestinations />
+            <IndiaSpiritual />
             <About />
             <Tours />
             <Offers />
             <TopDestinations />
+            
             <Features />
             <ChatBot open={chatOpen} onClose={closeChat} onOpen={openChat} />
             <Footer />

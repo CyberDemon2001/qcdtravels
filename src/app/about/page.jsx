@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Award, Globe, Heart, Users, ShieldCheck, Zap } from "lucide-react";
+import { Award, Globe, Heart, Users, ShieldCheck, Zap, MapPin, Briefcase,  } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 import GlassNavbar from "@/components/GlassNavbar";
 import Footer from "@/components/Footer";
@@ -39,28 +39,63 @@ const TEAM = [
 const WHY_US = [
   {
     title: "Bespoke Solutions",
-    desc: "We provide custom itineraries and travel plans tailored to your exact requirements.",
+    desc: "Bespoke solutions crafted to your exacting standards, tailored to individual and corporate travel needs.",
     icon: <Zap className="w-6 h-6" />,
   },
   {
-    title: "Dedicated Support",
-    desc: "Every traveler is assigned a Dedicated Client Relationship Manager for personalized, end-to-end support.",
+    title: "Dedicated Relationship Manager",
+    desc: "A dedicated relationship manager ensuring personalized attention and seamless coordination throughout your journey.",
     icon: <Users className="w-6 h-6" />,
   },
   {
-    title: "Efficiency & Transparency",
-    desc: "Experience a client-centric approach where clear communication and process efficiency are the top priorities.",
+    title: "Client-First Philosophy",
+    desc: "A refined, client-first philosophy rooted in trust, transparency, discretion, and long-term relationships.",
     icon: <ShieldCheck className="w-6 h-6" />,
   },
   {
-    title: "Seamless Documentation",
-    desc: "From visas to logistics, we offer seamless end-to-end travel and documentation services.",
+    title: "End-to-End Execution",
+    desc: "Seamless end-to-end execution of travel, visas, documentation, and logistics under one distinguished umbrella.",
     icon: <Globe className="w-6 h-6" />,
   },
   {
-    title: "Meticulous Detail",
-    desc: "We ensure perfection at every stage of your journey with meticulous attention to detail.",
+    title: "Meticulous Excellence",
+    desc: "Excellence delivered through meticulous attention to detail at every stage of planning and execution.",
     icon: <Award className="w-6 h-6" />,
+  },
+  {
+    title: "PAN India Visa Assistance",
+    desc: "Comprehensive PAN India visa assistance with expert guidance, compliance, and timely processing.",
+    icon: <MapPin className="w-6 h-6" />,
+  },
+];
+
+const SERVICES = [
+  {
+    title: "Visa & Documentation",
+    items: [
+      "Bespoke visa services across India",
+      "Legalization and Attestation of Documents",
+      "FRRO Services for foreign nationals",
+    ],
+    icon: <ShieldCheck className="w-6 h-6" />,
+  },
+  {
+    title: "Luxury Travel",
+    items: [
+      "Curated domestic & international travel",
+      "Luxury hotel & global flight arrangements",
+      "Premium foreign exchange solutions",
+    ],
+    icon: <Globe className="w-6 h-6" />,
+  },
+  {
+    title: "Corporate & MICE",
+    items: [
+      "Executive MICE management",
+      "Corporate travel logistics",
+      "Dedicated relationship desk",
+    ],
+    icon: <Briefcase className="w-6 h-6" />, // Note: You'll need to import Briefcase from lucide-react
   },
 ];
 
@@ -229,7 +264,50 @@ const AboutPage = () => {
         </div>
       </section>
 
+
+      {/* --- CORE SERVICES --- */}
+<section className="py-24 bg-white">
+  <div className="max-w-7xl mx-auto px-6 lg:px-12">
+    <div className="flex flex-col mb-16">
+      <h3 className="text-red-600 font-bold uppercase tracking-[0.3em] text-xs mb-4">
+        What We Do
+      </h3>
+      <h2 className="text-5xl md:text-7xl font-black text-gray-900 uppercase tracking-tighter leading-none">
+        Elite Travel <br />
+        <span className="text-gray-300">Architecture</span>
+      </h2>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      {SERVICES.map((service, idx) => (
+        <motion.div 
+          key={idx}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: idx * 0.1 }}
+          className="group border-t-4 border-gray-100 pt-8 hover:border-red-600 transition-colors duration-500"
+        >
+          <div className="text-red-600 mb-6">{service.icon}</div>
+          <h4 className="text-2xl font-black text-gray-900 uppercase tracking-tight mb-6">
+            {service.title}
+          </h4>
+          <ul className="space-y-4">
+            {service.items.map((item, i) => (
+              <li key={i} className="flex items-start gap-3 text-gray-500 group-hover:text-gray-900 transition-colors">
+                <span className="w-1.5 h-1.5 rounded-full bg-red-600 mt-2 shrink-0" />
+                <span className="text-sm font-medium leading-tight">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
       {/* --- DIRECTOR'S MESSAGE --- */}
+      
       <section className="px-6 lg:px-12 py-12">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
