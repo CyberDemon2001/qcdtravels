@@ -173,7 +173,7 @@ export default function ChatBot({ open, onClose, onOpen }) {
             className="lg:w-96 w-[320px] bg-transparent backdrop-blur-sm rounded-xl shadow-2xl border border-white/20 overflow-hidden flex flex-col h-[550px] lg:h-[600px]"
           >
             {/* Header */}
-            <div className="p-2 bg-gradient-to-r from-red-400 via-red-500 to-red-600 text-white flex items-center gap-3 shrink-0 shadow-md">
+            <div className="p-2 bg-gradient-to-r from-red-600 to-blue-600 text-white flex items-center gap-3 shrink-0 shadow-md">
               <div className="relative">
                 <div className="w-12 h-12 rounded-2xl overflow-hidden border-2 border-white/20 bg-white">
                   <Image src={travelDidiBot.image} alt="Bot" className="object-cover rounded-xl" />
