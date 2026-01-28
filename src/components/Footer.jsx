@@ -11,14 +11,14 @@ const Footer = () => {
       title: "Company",
       links: [
         { name: "About Us", href: "/about" },
-        { name: "Blog", href: "#" }
+        { name: "Blog", href: "/blog" }
       ]
     },
     {
       title: "Support",
       links: [
         { name: "Contact", href: "/contact" },
-        { name: "Privacy", href: "#" }
+        { name: "Privacy", href: "/privacy" }
       ]
     },
     {
@@ -99,7 +99,7 @@ const trendingDestinations = destinationsByMonth[month];
                 <ul className="space-y-3">
                   {section.links.map(link => (
                     <li key={link.name}>
-                      <Link href={link.href} className="text-[13px] text-gray-400 hover:text-orange-400 flex items-center gap-1 transition-colors group">
+                      <Link href={link.href} className="text-[13px] text-gray-400 hover:text-red-600 flex items-center gap-1 transition-colors group">
                         <ChevronRight size={12} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                         {link.name}
                       </Link>
@@ -116,7 +116,7 @@ const trendingDestinations = destinationsByMonth[month];
                   <h4 className="text-sm font-bold mb-3">Get Travel Updates</h4>
                   <div className="flex bg-white/10 rounded-lg p-1 border border-white/10 focus-within:border-red-600 transition-all">
                     <input type="email" placeholder="Email address" className="bg-transparent border-none outline-none px-3 py-2 text-sm w-full" />
-                    <button className="bg-red-600 p-2 rounded-md hover:bg-orange-600 transition-colors">
+                    <button className="bg-red-600 p-2 rounded-md hover:bg-red-800 transition-colors">
                       <Send size={16} />
                     </button>
                   </div>
@@ -142,7 +142,7 @@ const trendingDestinations = destinationsByMonth[month];
             </p>
             <div className="flex gap-8 text-[10px] font-bold text-gray-500 uppercase tracking-widest">
                 <Link href="/privacy" className="hover:text-red-600 transition-colors">Privacy Policy</Link>
-                <Link href="/terms" className="hover:text-red-600 transition-colors">Terms of Service</Link>
+                <Link href="/privacy" className="hover:text-red-600 transition-colors">Terms of Service</Link>
             </div>
           </div>
         </div>

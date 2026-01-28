@@ -173,12 +173,12 @@ export default function ChatBot({ open, onClose, onOpen }) {
             className="lg:w-96 w-[320px] bg-transparent backdrop-blur-sm rounded-xl shadow-2xl border border-white/20 overflow-hidden flex flex-col h-[550px] lg:h-[600px]"
           >
             {/* Header */}
-            <div className="p-2 bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 text-white flex items-center gap-3 shrink-0 shadow-md">
+            <div className="p-2 bg-gradient-to-r from-red-400 via-red-500 to-red-600 text-white flex items-center gap-3 shrink-0 shadow-md">
               <div className="relative">
                 <div className="w-12 h-12 rounded-2xl overflow-hidden border-2 border-white/20 bg-white">
                   <Image src={travelDidiBot.image} alt="Bot" className="object-cover rounded-xl" />
                 </div>
-                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-400 border-2 border-orange-600 rounded-full animate-pulse" />
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-400 border-2 border-red-600 rounded-full animate-pulse" />
               </div>
               <div className="flex-1">
                 <h3 className="font-bold text-lg flex items-center gap-2 tracking-tight">
@@ -205,7 +205,7 @@ export default function ChatBot({ open, onClose, onOpen }) {
                   <div
                     className={`max-w-[85%] p-2 text-sm leading-relaxed shadow-sm ${
                       msg.sender === "user"
-                        ? "bg-orange-500 text-white rounded-2xl rounded-tr-none shadow-orange-200"
+                        ? "bg-red-500 text-white rounded-2xl rounded-tr-none shadow-red-200"
                         : "bg-white text-gray-700 rounded-2xl rounded-tl-none border border-gray-100"
                     }`}
                   >
@@ -217,9 +217,9 @@ export default function ChatBot({ open, onClose, onOpen }) {
               ))}
               {isLoading && (
                 <div className="flex gap-1.5 p-3 bg-white w-16 rounded-2xl shadow-sm border border-gray-100 ml-2">
-                  <span className="w-2 h-2 bg-orange-400 rounded-full animate-bounce [animation-delay:-0.3s]" />
-                  <span className="w-2 h-2 bg-orange-400 rounded-full animate-bounce [animation-delay:-0.15s]" />
-                  <span className="w-2 h-2 bg-orange-400 rounded-full animate-bounce" />
+                  <span className="w-2 h-2 bg-red-400 rounded-full animate-bounce [animation-delay:-0.3s]" />
+                  <span className="w-2 h-2 bg-red-400 rounded-full animate-bounce [animation-delay:-0.15s]" />
+                  <span className="w-2 h-2 bg-red-400 rounded-full animate-bounce" />
                 </div>
               )}
               <div ref={messagesEndRef} />
@@ -234,7 +234,7 @@ export default function ChatBot({ open, onClose, onOpen }) {
                       <button
                         key={opt}
                         onClick={() => handleInterestSelect(opt)}
-                        className="w-full text-left px-4 py-3 rounded-xl border border-orange-100 bg-orange-50/30 text-orange-600 hover:bg-orange-500 hover:text-white text-xs font-bold transition-all shadow-sm flex items-center gap-2"
+                        className="w-full text-left px-4 py-3 rounded-xl border border-red-100 bg-red-50/30 text-red-600 hover:bg-red-500 hover:text-white text-xs font-bold transition-all shadow-sm flex items-center gap-2"
                       >
                         <MapPin size={14} /> {opt}
                       </button>
@@ -248,7 +248,7 @@ export default function ChatBot({ open, onClose, onOpen }) {
                       <button
                         key={m}
                         onClick={() => handleMonthSelect(m)}
-                        className="py-2 text-[11px] font-bold rounded-lg border border-gray-100 hover:border-orange-500 hover:text-orange-500 transition-all bg-white"
+                        className="py-2 text-[11px] font-bold rounded-lg border border-gray-100 hover:border-red-500 hover:text-red-500 transition-all bg-white"
                       >
                         {m}
                       </button>
@@ -262,7 +262,7 @@ export default function ChatBot({ open, onClose, onOpen }) {
                       <button
                         key={y}
                         onClick={() => handleYearSelect(y)}
-                        className="flex-1 py-3 text-sm font-bold rounded-xl border-2 border-orange-50 text-orange-500 hover:bg-orange-500 hover:text-white transition-all bg-orange-50/50"
+                        className="flex-1 py-3 text-sm font-bold rounded-xl border-2 border-red-50 text-red-500 hover:bg-red-500 hover:text-white transition-all bg-red-50/50"
                       >
                         {y}
                       </button>
@@ -276,7 +276,7 @@ export default function ChatBot({ open, onClose, onOpen }) {
                       <button
                         key={d}
                         onClick={() => handleDestinationSelect(d)}
-                        className="p-4 text-xs font-bold rounded-2xl border border-gray-100 bg-white hover:border-orange-500 transition-all shadow-sm"
+                        className="p-4 text-xs font-bold rounded-2xl border border-gray-100 bg-white hover:border-red-500 transition-all shadow-sm"
                       >
                         {d}
                       </button>
@@ -290,7 +290,7 @@ export default function ChatBot({ open, onClose, onOpen }) {
                       <button
                         key={t}
                         onClick={() => handleTripTypeSelect(t)}
-                        className="px-4 py-2 text-[11px] font-bold rounded-full border border-gray-200 bg-gray-50 text-gray-600 hover:bg-orange-500 hover:text-white transition-all"
+                        className="px-4 py-2 text-[11px] font-bold rounded-full border border-gray-200 bg-gray-50 text-gray-600 hover:bg-red-500 hover:text-white transition-all"
                       >
                         {t}
                       </button>
@@ -304,7 +304,7 @@ export default function ChatBot({ open, onClose, onOpen }) {
                       <button
                         key={a}
                         onClick={() => handleAgeGroupSelect(a)}
-                        className="py-2 text-[11px] font-bold rounded-lg bg-gray-50 text-gray-600 hover:bg-orange-500 hover:text-white transition-all"
+                        className="py-2 text-[11px] font-bold rounded-lg bg-gray-50 text-gray-600 hover:bg-red-500 hover:text-white transition-all"
                       >
                         {a}
                       </button>
@@ -317,7 +317,7 @@ export default function ChatBot({ open, onClose, onOpen }) {
                     <input
                       type={conversationStep === "phone" ? "tel" : "text"}
                       autoFocus
-                      className="flex-1 px-4 py-3 text-sm bg-gray-50 border border-gray-200 rounded-2xl outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-100 transition-all"
+                      className="flex-1 px-4 py-3 text-sm bg-gray-50 border border-gray-200 rounded-2xl outline-none focus:border-red-500 focus:ring-4 focus:ring-red-100 transition-all"
                       placeholder="Type your answer..."
                       value={inputValue}
                       onChange={(e) => setInputValue(e.target.value)}
@@ -325,7 +325,7 @@ export default function ChatBot({ open, onClose, onOpen }) {
                     />
                     <button
                       onClick={handleSendMessage}
-                      className="w-12 h-12 bg-orange-500 text-white rounded-2xl flex items-center justify-center shadow-lg hover:bg-orange-600 transition-all"
+                      className="w-12 h-12 bg-red-500 text-white rounded-2xl flex items-center justify-center shadow-lg hover:bg-red-600 transition-all"
                     >
                       <FiSend size={20} />
                     </button>
@@ -356,15 +356,15 @@ export default function ChatBot({ open, onClose, onOpen }) {
             onClick={onOpen}
           >
             {/* Tooltip */}
-            <div className="absolute -top-12 right-0 bg-white px-4 py-2 rounded-2xl shadow-xl border border-orange-100 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 whitespace-nowrap">
-              <p className="text-orange-600 font-bold text-xs flex items-center gap-2">
+            <div className="absolute -top-12 right-0 bg-white px-4 py-2 rounded-2xl shadow-xl border border-red-100 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 whitespace-nowrap">
+              <p className="text-red-600 font-bold text-xs flex items-center gap-2">
                 Ek Trip To Banta Hai!
               </p>
-              <div className="absolute -bottom-1 right-6 w-2 h-2 bg-white border-r border-b border-orange-100 rotate-45" />
+              <div className="absolute -bottom-1 right-6 w-2 h-2 bg-white border-r border-b border-red-100 rotate-45" />
             </div>
 
             <div className="relative w-24 h-24 lg:w-28 lg:h-28">
-              <div className="absolute inset-0 bg-orange-500 rounded-full animate-ping opacity-50" />
+              <div className="absolute inset-0 bg-red-500 rounded-full animate-ping opacity-50" />
               <div className="relative h-full w-full shadow-2xl overflow-hidden">
                 <Image
                   src={traveldidiImage}
