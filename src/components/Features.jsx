@@ -52,9 +52,9 @@ const Features = () => {
   }, []);
 
   return (
-    <section className="px-6 md:px-12 lg:px-24 py-10 lg:py-24 bg-gradient-to-br from-red-600/80 via-white to-blue-500/80 overflow-hidden font-['Inter_Variable']">
+    <section className="px-6 md:px-12 lg:px-24 py-10 lg:py-24 bg-linear-to-br from-red-600/80 via-white to-blue-500/80 overflow-hidden font-['Inter_Variable']">
       {/* Background Subtle Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-red-50/50 via-white to-blue-100/20 -z-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-br from-red-50/50 via-white to-blue-100/20 -z-10 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-20">
@@ -132,7 +132,7 @@ const Features = () => {
 
         <div className="flex items-center gap-6">
           <motion.div 
-            className={`shrink-0 w-16 h-16 rounded-[1.5rem] bg-gradient-to-br ${feature.color} flex items-center justify-center text-white shadow-lg`}
+            className={`shrink-0 w-16 h-16 rounded-3xl bg-linear-to-br ${feature.color} flex items-center justify-center text-white shadow-lg`}
             animate={isActive ? { y: [0, -6, 0] } : {}}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           >

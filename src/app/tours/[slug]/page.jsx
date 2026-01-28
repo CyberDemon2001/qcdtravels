@@ -95,7 +95,7 @@ const TourDetails = () => {
           priority
           className="object-cover scale-105 hover:scale-100 transition-transform duration-1000" 
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
         <div className="absolute bottom-12 left-0 w-full">
           <div className="max-w-7xl mx-auto px-6 lg:px-12">
             <div className="flex items-center gap-2 text-orange-400 font-black text-xs uppercase tracking-[0.3em] mb-4">
@@ -144,7 +144,7 @@ const TourDetails = () => {
           </div>
 
           {/* What's Included */}
-          <div className="space-y-6 bg-gray-50 p-8 rounded-[2rem]">
+          <div className="space-y-6 bg-gray-50 p-8 rounded-4xl">
             <h3 className="text-2xl font-black uppercase tracking-tighter">What's Included</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {tour.includes?.map((item, i) => (

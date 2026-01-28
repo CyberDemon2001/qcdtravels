@@ -37,7 +37,7 @@ const AllToursPage = () => {
       <GlassNavbar />
 
       {/* --- HEADER SECTION WITH BACKGROUND IMAGE --- */}
-      <section className="relative h-[60vh] min-h-[450px] w-full overflow-hidden flex items-center">
+      <section className="relative h-[60vh] min-h-112.5 w-full overflow-hidden flex items-center">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image 
@@ -80,15 +80,15 @@ const AllToursPage = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
-              className="w-full md:w-[450px] relative mb-4"
+              className="w-full md:w-112.5 relative mb-4"
             >
-              <div className="bg-white/10 backdrop-blur-xl p-2 rounded-[2rem] border border-white/20 shadow-2xl">
+              <div className="bg-white/10 backdrop-blur-xl p-2 rounded-4xl border border-white/20 shadow-2xl">
                 <div className="relative">
                   <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-red-600 w-5 h-5" />
                   <input 
                     type="text"
                     placeholder="Where do you want to go?"
-                    className="w-full pl-14 pr-6 py-5 rounded-[1.5rem] bg-white text-gray-900 font-bold outline-none shadow-inner"
+                    className="w-full pl-14 pr-6 py-5 rounded-3xl bg-white text-gray-900 font-bold outline-none shadow-inner"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                   />

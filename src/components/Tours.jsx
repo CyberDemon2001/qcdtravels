@@ -73,7 +73,7 @@ const Tours = () => {
         
         <Link href="/tours">
         <motion.button 
-          className="bg-gradient-to-r from-red-600 to-blue-700 hover:cursor-pointer text-white px-8 py-4 rounded-2xl flex items-center gap-4 transition-all duration-300 text-xs font-black shadow-lg uppercase tracking-widest"
+          className="bg-linear-to-r from-red-600 to-blue-700 hover:cursor-pointer text-white px-8 py-4 rounded-2xl flex items-center gap-4 transition-all duration-300 text-xs font-black shadow-lg uppercase tracking-widest"
           whileHover={{ y: -5 }}
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}

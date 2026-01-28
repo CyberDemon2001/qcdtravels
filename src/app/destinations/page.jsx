@@ -52,7 +52,7 @@ const DestinationsPage = () => {
           {DESTINATIONS.map((dest, idx) => (
             <Link key={dest.id} href={`/destinations/${dest.slug}`}>
               <motion.div 
-                className="group relative h-[500px] rounded-[3rem] overflow-hidden cursor-pointer shadow-2xl"
+                className="group relative h-125 rounded-[3rem] overflow-hidden cursor-pointer shadow-2xl"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -69,7 +69,7 @@ const DestinationsPage = () => {
                 />
 
                 {/* Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 transition-opacity group-hover:opacity-90" />
+                <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent opacity-80 transition-opacity group-hover:opacity-90" />
                 
                 {/* Content */}
                 <div className="absolute inset-0 p-10 flex flex-col justify-end">
@@ -93,7 +93,7 @@ const DestinationsPage = () => {
                 </div>
 
                 {/* Subtle border glow on hover */}
-                <div className="absolute inset-0 border-0 group-hover:border-[12px] border-white/5 transition-all duration-500 rounded-[3rem]" />
+                <div className="absolute inset-0 border-0 group-hover:border-12 border-white/5 transition-all duration-500 rounded-[3rem]" />
               </motion.div>
             </Link>
           ))}

@@ -61,7 +61,7 @@ const PopularDestinations = () => {
         </div>
         <Link href="/destinations">
         <motion.button 
-          className="bg-gradient-to-r from-red-600 to-blue-700 hover:cursor-pointer text-white px-8 py-4 rounded-2xl flex items-center gap-4 transition-all duration-300 text-xs font-black shadow-lg uppercase tracking-widest"
+          className="bg-linear-to-r from-red-600 to-blue-700 hover:cursor-pointer text-white px-8 py-4 rounded-2xl flex items-center gap-4 transition-all duration-300 text-xs font-black shadow-lg uppercase tracking-widest"
           whileHover={{ y: -5 }}
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -97,13 +97,13 @@ const PopularDestinations = () => {
             640: { slidesPerView: 2 },
             1024: { slidesPerView: 4 },
           }}
-          className="pb-12 !overflow-visible" // Added overflow visible for the hover lift effect
+          className="pb-12 overflow-visible!" // Added overflow visible for the hover lift effect
         >
           {DESTINATIONS.map((city, index) => (
             <SwiperSlide key={city.id}>
               <Link key={city.id} href={`/destinations/${city.slug}`}>
               <motion.div 
-                className="relative h-[450px] rounded-[2.5rem] overflow-hidden group/card cursor-pointer"
+                className="relative h-112.5 rounded-[2.5rem] overflow-hidden group/card cursor-pointer"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -131,7 +131,7 @@ const PopularDestinations = () => {
                 </div>
 
                 {/* Subtle gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 group-hover/card:opacity-80 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent opacity-60 group-hover/card:opacity-80 transition-opacity duration-500" />
               </motion.div>
               </Link>
             </SwiperSlide>
@@ -144,7 +144,7 @@ const PopularDestinations = () => {
             <ChevronLeft size={32} strokeWidth={2.5} />
           </button>
           
-          <div className="popular-pagination !static flex gap-2 w-auto"></div>
+          <div className="popular-pagination static! flex gap-2 w-auto"></div>
           
           <button className="popular-next p-2 text-gray-900 hover:text-red-600 transition-colors disabled:opacity-30">
             <ChevronRight size={32} strokeWidth={2.5} />

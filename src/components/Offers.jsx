@@ -7,7 +7,7 @@ import { Plane } from 'lucide-react';
 
 const Offers = () => {
   return (
-    <section className="relative w-full py-10 lg:py-24 px-6 bg-gradient-to-br from-red-600/80 via-white to-blue-500/80 overflow-hidden font-['Inter_Variable']">
+    <section className="relative w-full py-10 lg:py-24 px-6 bg-linear-to-br from-red-600/80 via-white to-blue-500/80 overflow-hidden font-['Inter_Variable']">
       
       {/* Background Decorative Text - Drifting animation */}
       <motion.div 
@@ -21,7 +21,7 @@ const Offers = () => {
       </motion.div>
 
       {/* Background Gradients to match brand */}
-      <div className="absolute inset-0 bg-gradient-to-br from-red-500/80 via-white to-red-500/80 -z-20" />
+      <div className="absolute inset-0 bg-linear-to-br from-red-500/80 via-white to-red-500/80 -z-20" />
 
       <div className="max-w-6xl mx-auto">
         
@@ -80,7 +80,7 @@ const Offers = () => {
             whileHover={{ y: -10 }}
             className="relative group w-full lg:w-1/2 rounded-[2.5rem] p-3 bg-white border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500"
           >
-            <div className="relative h-80 overflow-hidden rounded-[2rem]">
+            <div className="relative h-80 overflow-hidden rounded-4xl">
               <Image 
                 src="https://plus.unsplash.com/premium_photo-1726812029363-8dfd0cfca223?auto=format&fit=crop&w=800&q=80" 
                 alt="Traveler Discount" 
@@ -88,7 +88,7 @@ const Offers = () => {
                 className="object-cover transition-transform duration-1000 group-hover:scale-110"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-60" />
             </div>
             
             {/* Info Bar */}
@@ -115,7 +115,7 @@ const Offers = () => {
             whileHover={{ y: -10 }}
             className="relative group w-full lg:w-1/2 rounded-[2.5rem] p-3 bg-white border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500"
           >
-            <div className="relative h-80 overflow-hidden rounded-[2rem]">
+            <div className="relative h-80 overflow-hidden rounded-4xl">
               <Image 
                 src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&q=80&w=800" 
                 alt="Expert Guides" 
@@ -123,7 +123,7 @@ const Offers = () => {
                 className="object-cover transition-transform duration-1000 group-hover:scale-110"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-60" />
             </div>
 
             {/* Info Bar */}

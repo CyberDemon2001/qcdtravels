@@ -228,7 +228,7 @@ const ContactPage = () => {
               <button 
                 type="submit"
                 disabled={loading}
-                className="w-full py-5 bg-gradient-to-r from-red-600 to-blue-700 hover:cursor-pointer hover:bg-black text-white rounded-2xl font-black uppercase tracking-[0.2em] text-xs transition-all duration-500 flex items-center justify-center gap-3 group shadow-xl shadow-red-600/20 disabled:opacity-50"
+                className="w-full py-5 bg-linear-to-r from-red-600 to-blue-700 hover:cursor-pointer hover:bg-black text-white rounded-2xl font-black uppercase tracking-[0.2em] text-xs transition-all duration-500 flex items-center justify-center gap-3 group shadow-xl shadow-red-600/20 disabled:opacity-50"
               >
                 {loading ? "Sending..." : "Send Message"}
                 <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

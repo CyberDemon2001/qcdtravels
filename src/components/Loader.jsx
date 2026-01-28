@@ -22,7 +22,7 @@ const Loader = ({ finishLoading }) => {
 
   return (
     <motion.div 
-      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-white font-['Inter_Variable']"
+      className="fixed inset-0 z-9999 flex flex-col items-center justify-center bg-white font-['Inter_Variable']"
       exit={{ 
         y: "-100%",
         transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } 
@@ -100,7 +100,7 @@ const Loader = ({ finishLoading }) => {
         {/* Branded Progress Bar */}
         <div className="relative w-64 h-1.5 bg-gray-100 rounded-full overflow-hidden mx-auto mb-4">
           <motion.div 
-            className="absolute top-0 left-0 h-full bg-gradient-to-r from-teal-700 via-orange-400 to-orange-700"
+            className="absolute top-0 left-0 h-full bg-linear-to-r from-teal-700 via-orange-400 to-orange-700"
             initial={{ width: 0 }}
             animate={{ width: `${percent}%` }}
           />

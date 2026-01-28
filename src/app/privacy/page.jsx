@@ -79,7 +79,7 @@ const PrivacyPage = () => {
                 ))}
               </div>
               
-              <div className="mt-12 p-8 bg-gradient-to-br from-red-600 to-blue-700 rounded-[2rem] text-white shadow-xl shadow-red-600/20">
+              <div className="mt-12 p-8 bg-linear-to-br from-red-600 to-blue-700 rounded-4xl text-white shadow-xl shadow-red-600/20">
                 <h3 className="font-black uppercase text-xs tracking-[0.2em] mb-2">Need Clarity?</h3>
                 <p className="text-sm opacity-90 mb-6 font-medium">If you have questions regarding your data, our legal team is ready to assist.</p>
                 <button className="w-full py-3 bg-white text-black rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-gray-100 transition-colors">

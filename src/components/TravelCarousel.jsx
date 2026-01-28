@@ -87,7 +87,7 @@ const TravelCarousel = () => {
               {SLIDES[activeIndex].description}
             </p>
 
-            <button onClick={()=>router.push("/destinations")} className="px-10 py-4 bg-gradient-to-r from-red-600 to-blue-700 transition-all hover:cursor-pointer rounded-2xl flex items-center gap-4 w-fit shadow-xl shadow-red-500/20 font-black uppercase tracking-widest text-xs">
+            <button onClick={()=>router.push("/destinations")} className="px-10 py-4 bg-linear-to-r from-red-600 to-blue-700 transition-all hover:cursor-pointer rounded-2xl flex items-center gap-4 w-fit shadow-xl shadow-red-500/20 font-black uppercase tracking-widest text-xs">
               Explore Now <FiArrowRight size={18} />
             </button>
           </motion.div>
@@ -111,18 +111,18 @@ const TravelCarousel = () => {
             slideShadows: false,
           }}
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-          className="mySwiper !overflow-visible"
+          className="mySwiper overflow-visible!"
         >
           {SLIDES.map((slide) => (
             <SwiperSlide key={slide.id} className="rounded-3xl overflow-hidden group">
-              <div className="relative aspect-[13/20] lg:aspect-[3/4] rounded-3xl overflow-hidden border border-white/20 shadow-2xl transition-transform duration-500 group-hover:scale-105">
+              <div className="relative aspect-13/20 lg:aspect-3/4 rounded-3xl overflow-hidden border border-white/20 shadow-2xl transition-transform duration-500 group-hover:scale-105">
                 <Image 
                   src={slide.image} 
                   alt={slide.location}
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6">
                   <p className="text-xs font-black text-red-600 uppercase tracking-widest mb-1">{slide.location}</p>
                 </div>
@@ -134,7 +134,7 @@ const TravelCarousel = () => {
       
       {/* 4. Brand-Aligned Progress Bar */}
       <div className="absolute lg:left-10 left-1 top-1/2 -translate-y-1/2 flex flex-col items-center gap-8 z-20">
-        <span className="lg:text-[12px] text-[10xl] font-black text-red-600 uppercase tracking-widest rotate-90 mb-4">
+        <span className="lg:text-[12px] font-black text-red-600 uppercase tracking-widest rotate-90 mb-4">
             0{activeIndex + 1} / 0{SLIDES.length}
         </span>
         <div className="w-[1.5px] h-32 bg-white/10 relative rounded-full">

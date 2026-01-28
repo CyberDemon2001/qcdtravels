@@ -13,7 +13,7 @@ const About = () => {
   return (
     <section className="max-w-full mx-auto px-6 py-10 lg:py-24 relative overflow-hidden bg-white">
       {/* Background Gradients */}
-      <div className="absolute inset-0 bg-gradient-to-br from-red-600/80 via-white to-blue-500/80 pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-br from-red-600/80 via-white to-blue-500/80 pointer-events-none" />
       
       {/* Decorative floating particles */}
       <div className="absolute top-20 right-20 w-72 h-72 bg-red-600/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" />
@@ -22,7 +22,7 @@ const About = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
 
         {/* LEFT SIDE: OVERLAPPING IMAGES */}
-        <div className="relative h-[550px] w-full max-w-[550px] mx-auto lg:mx-0">
+        <div className="relative h-137.5 w-full max-w-137.5 mx-auto lg:mx-0">
           
           {/* Main Large Image */}
           <motion.div 
@@ -41,7 +41,7 @@ const About = () => {
               fill
               sizes="(max-width: 768px) 60vw, 40vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
           </motion.div>
           
           {/* Top Right Small Image */}
@@ -117,7 +117,7 @@ const About = () => {
             ].map((stat, idx) => (
               <motion.div 
                 key={idx}
-                className="group flex-1 min-w-[140px] p-6 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-red-200/30 hover:border-red-200 transition-all duration-500"
+                className="group flex-1 min-w-35 p-6 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-red-200/30 hover:border-red-200 transition-all duration-500"
                 whileHover={{ y: -10 }}
               >
                 <div className="w-12 h-12 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center mb-5 group-hover:bg-red-600 group-hover:text-white transition-all duration-300">

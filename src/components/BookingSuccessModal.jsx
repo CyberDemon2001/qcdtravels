@@ -6,7 +6,7 @@ const BookingSuccessModal = ({ isOpen, onClose, title = "Inquiry Sent!", message
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center px-6">
+    <div className="fixed inset-0 z-100 flex items-center justify-center px-6">
       {/* Glassmorphism Backdrop */}
       <div 
         className="absolute inset-0 bg-black/60 backdrop-blur-md transition-opacity" 
@@ -14,7 +14,7 @@ const BookingSuccessModal = ({ isOpen, onClose, title = "Inquiry Sent!", message
       />
       
       {/* Modal Card */}
-      <div className="relative bg-white rounded-[2.5rem] p-8 md:p-12 max-w-lg w-full text-center shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] transform transition-all animate-in fade-in zoom-in duration-300">
+      <div className="relative bg-white rounded-4xl p-8 md:p-12 max-w-lg w-full text-center shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] transform transition-all animate-in fade-in zoom-in duration-300">
         {/* Close Button */}
         <button 
           onClick={onClose} 

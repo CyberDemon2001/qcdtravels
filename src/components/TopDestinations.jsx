@@ -89,7 +89,7 @@ const TopDestinations = () => {
                 whileHover={{ y: -10 }}
               >
                 {/* Image Container */}
-                <div className="relative h-72 overflow-hidden rounded-[2rem]">
+                <div className="relative h-72 overflow-hidden rounded-4xl">
                   <Image 
                     src={dest.image} 
                     alt={dest.name}

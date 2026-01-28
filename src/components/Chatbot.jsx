@@ -161,7 +161,7 @@ export default function ChatBot({ open, onClose, onOpen }) {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 z-[1000]">
+    <div className="fixed bottom-4 right-4 z-1000">
       <AnimatePresence mode="wait">
         {open ? (
           /* --- CHAT WINDOW --- */
@@ -170,10 +170,10 @@ export default function ChatBot({ open, onClose, onOpen }) {
             initial={{ opacity: 0, scale: 0.9, y: 50, transformOrigin: "bottom right" }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 50 }}
-            className="lg:w-96 w-[320px] bg-transparent backdrop-blur-sm rounded-xl shadow-2xl border border-white/20 overflow-hidden flex flex-col h-[550px] lg:h-[600px]"
+            className="lg:w-96 w-[320px] bg-transparent backdrop-blur-sm rounded-xl shadow-2xl border border-white/20 overflow-hidden flex flex-col h-137.5 lg:h-150"
           >
             {/* Header */}
-            <div className="p-2 bg-gradient-to-r from-red-600 to-blue-600 text-white flex items-center gap-3 shrink-0 shadow-md">
+            <div className="p-2 bg-linear-to-r from-red-600 to-blue-600 text-white flex items-center gap-3 shrink-0 shadow-md">
               <div className="relative">
                 <div className="w-12 h-12 rounded-2xl overflow-hidden border-2 border-white/20 bg-white">
                   <Image src={travelDidiBot.image} alt="Bot" className="object-cover rounded-xl" />

@@ -83,7 +83,7 @@ const DestinationDetail = () => {
           transition={{ repeat: Infinity, duration: 2 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50"
         >
-          <div className="w-px h-12 bg-gradient-to-t from-red-600 to-transparent mx-auto" />
+          <div className="w-px h-12 bg-linear-to-t from-red-600 to-transparent mx-auto" />
         </motion.div>
       </section>
 
@@ -123,11 +123,11 @@ const DestinationDetail = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative h-[500px] w-full rounded-[3rem] overflow-hidden border-[16px] border-gray-50 shadow-2xl">
+            <div className="relative h-125 w-full rounded-[3rem] overflow-hidden border-16 border-gray-50 shadow-2xl">
                <Image src={data.image} alt="about" fill className="object-cover" />
             </div>
             {/* Floating Stats */}
-            <div className="absolute -bottom-6 -left-6 bg-black text-white p-8 rounded-[2rem] shadow-2xl">
+            <div className="absolute -bottom-6 -left-6 bg-black text-white p-8 rounded-4xl shadow-2xl">
                <p className="text-4xl font-black text-red-600">42+</p>
                <p className="text-[10px] uppercase font-black tracking-widest text-gray-400">Handpicked Tours</p>
             </div>

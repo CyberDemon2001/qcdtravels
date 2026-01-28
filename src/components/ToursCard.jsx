@@ -41,7 +41,7 @@ const ToursCard = ({ item, index }) => {
         transition={{ duration: 0.6, delay: index * 0.1 }}
       >
         {/* IMAGE */}
-        <div className="relative h-[280px] w-full rounded-[2.5rem] overflow-hidden shadow-2xl z-0 bg-slate-100">
+        <div className="relative h-70 w-full rounded-[2.5rem] overflow-hidden shadow-2xl z-0 bg-slate-100">
           <div className="absolute top-2 left-1/2 -translate-x-1/2 z-30 px-3 py-1 rounded-2xl bg-red-600 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-widest shadow-lg border border-white/10">
             {item?.duration?.days}Days / {item?.duration?.nights}Nights
           </div>
@@ -52,12 +52,12 @@ const ToursCard = ({ item, index }) => {
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover transition-transform duration-700 group-hover:scale-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent" />
         </div>
 
         {/* CONTENT */}
         <motion.div
-          className="relative z-20 -mt-10 ml-6 w-[100%] bg-white/95 backdrop-blur-xl rounded-3xl p-6 shadow-xl border border-white/50"
+          className="relative z-20 -mt-10 ml-6 w-full bg-white/95 backdrop-blur-xl rounded-3xl p-6 shadow-xl border border-white/50"
           whileHover={{ y: -5, backgroundColor: "rgba(255, 255, 255, 1)" }}
           transition={{ type: "spring", stiffness: 300 }}
         >

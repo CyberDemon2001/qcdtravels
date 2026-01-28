@@ -59,7 +59,7 @@ const AboutPage = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative h-[400px] lg:h-[600px] w-full rounded-[3rem] overflow-hidden z-10">
+            <div className="relative h-100 lg:h-150 w-full rounded-[3rem] overflow-hidden z-10">
               <Image 
                 src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&w=800&q=80"
                 alt="Traveler looking at mountains"

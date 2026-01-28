@@ -139,8 +139,8 @@ const BlogPage = () => {
               </div>
 
               {/* Content */}
-              <div className="p-8 flex flex-col flex-grow">
-                <div className="flex items-center gap-4 text-gray-400 text-[10px] font-bold uppercase tracking-[0.1em] mb-4">
+              <div className="p-8 flex flex-col grow">
+                <div className="flex items-center gap-4 text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-4">
                   <span className="flex items-center gap-1"><Calendar size={12} /> {post.date}</span>
                   <span className="flex items-center gap-1"><User size={12} /> {post.author}</span>
                 </div>
@@ -149,7 +149,7 @@ const BlogPage = () => {
                   {post.title}
                 </h3>
                 
-                <p className="text-gray-500 leading-relaxed mb-6 flex-grow">
+                <p className="text-gray-500 leading-relaxed mb-6 grow">
                   {post.excerpt}
                 </p>
 
