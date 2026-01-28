@@ -33,7 +33,7 @@ const AboutPage = () => {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-3 py-1 bg-orange-500/20 rounded-full text-orange-500 font-black text-[10px] uppercase tracking-[0.3em] mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1 bg-red-600/20 rounded-full text-red-600 font-black text-[10px] uppercase tracking-[0.3em] mb-6"
           >
             <Zap className="w-3 h-3 fill-current" />
             The QCD Story
@@ -45,7 +45,7 @@ const AboutPage = () => {
             className="text-6xl md:text-8xl font-black text-white tracking-tighter uppercase leading-[0.85]"
           >
             Redefining <br />
-            <span className="text-orange-500 font-serif italic font-medium">Adventure</span>
+            <span className="text-red-600 font-serif italic font-medium">Adventure</span>
           </motion.h1>
         </div>
       </section>
@@ -69,7 +69,7 @@ const AboutPage = () => {
             </div>
             {/* Glassmorphism Floating Badge */}
             <div className="absolute -bottom-10 -right-10 hidden md:block z-20 bg-white/80 backdrop-blur-2xl border border-white p-10 rounded-[2.5rem] shadow-2xl max-w-xs">
-              <Heart className="text-orange-500 w-10 h-10 mb-4" />
+              <Heart className="text-red-600 w-10 h-10 mb-4" />
               <p className="font-bold text-gray-900 leading-relaxed">
                 "We don't just book trips; we craft core memories that stay with you forever."
               </p>
@@ -83,7 +83,7 @@ const AboutPage = () => {
             className="lg:space-y-8 space-y-8"
           >
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 uppercase tracking-tighter">
-              Why We <span className="text-orange-500">Started</span>
+              Why We <span className="text-red-600">Started</span>
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed">
               Founded in 2025, QCD Travels emerged from a simple realization: the travel industry was becoming too robotic. We wanted to bring the **soul** back to exploration.
@@ -95,7 +95,7 @@ const AboutPage = () => {
             <div className="grid grid-cols-2 gap-8 pt-6">
               {STATS.map((stat, i) => (
                 <div key={i} className="space-y-2">
-                  <div className="flex items-center gap-2 text-orange-500">
+                  <div className="flex items-center gap-2 text-red-600">
                     {stat.icon}
                     <span className="text-2xl font-black text-gray-900">{stat.value}</span>
                   </div>
@@ -111,7 +111,7 @@ const AboutPage = () => {
       <section className="bg-gray-50 py-10 lg:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-8 lg:mb-16">
-            <h2 className="text-4xl font-black text-gray-900 uppercase tracking-tighter">Our Core <span className="text-orange-500">Values</span></h2>
+            <h2 className="text-4xl font-black text-gray-900 uppercase tracking-tighter">Our Core <span className="text-red-600">Values</span></h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -141,7 +141,7 @@ const AboutPage = () => {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-xl">
              <h2 className="text-4xl md:text-6xl font-black text-gray-900 uppercase tracking-tighter leading-none">
-                The Minds Behind <br /> <span className="text-orange-500 italic font-serif">The Magic</span>
+                The Minds Behind <br /> <span className="text-red-600 italic font-serif">The Magic</span>
              </h2>
           </div>
           <p className="text-gray-400 font-bold uppercase text-xs tracking-[0.2em]">Based in London • Operating Worldwide</p>
@@ -159,7 +159,7 @@ const AboutPage = () => {
                 <Image src={member.img} alt={member.name} fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
               </div>
               <h4 className="text-xl font-black text-gray-900 uppercase tracking-tight">{member.name}</h4>
-              <p className="text-orange-500 text-xs font-black uppercase tracking-widest">{member.role}</p>
+              <p className="text-red-600 text-xs font-black uppercase tracking-widest">{member.role}</p>
             </motion.div>
           ))}
         </div>

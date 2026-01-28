@@ -57,7 +57,7 @@ const AllToursPage = () => {
               <motion.div 
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="inline-flex items-center gap-2 px-4 py-1.5 bg-orange-500 text-white rounded-full font-black text-[10px] uppercase tracking-[0.2em] mb-6 shadow-xl shadow-orange-500/20"
+                className="inline-flex items-center gap-2 px-4 py-1.5 bg-red-600 text-white rounded-full font-black text-[10px] uppercase tracking-[0.2em] mb-6 shadow-xl shadow-red-600/20"
               >
                 <Award className="w-3 h-3" />
                 World-Class Experiences
@@ -70,8 +70,8 @@ const AllToursPage = () => {
                 className="text-6xl md:text-8xl font-black text-white tracking-tighter leading-none"
               >
                 Explore All <br />
-                <span className="text-orange-500 font-serif italic font-medium">Tours</span>
-                <Plane className="inline-block ml-4 w-12 h-12 text-orange-500 animate-pulse" />
+                <span className="text-red-600 font-serif italic font-medium">Tours</span>
+                <Plane className="inline-block ml-4 w-12 h-12 text-red-600 animate-pulse" />
               </motion.h1>
             </div>
 
@@ -84,7 +84,7 @@ const AllToursPage = () => {
             >
               <div className="bg-white/10 backdrop-blur-xl p-2 rounded-[2rem] border border-white/20 shadow-2xl">
                 <div className="relative">
-                  <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-orange-500 w-5 h-5" />
+                  <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-red-600 w-5 h-5" />
                   <input 
                     type="text"
                     placeholder="Where do you want to go?"
@@ -112,11 +112,11 @@ const AllToursPage = () => {
         
         {/* Filter Chips */}
         {/* <div className="flex flex-wrap items-center gap-3 mb-10">
-          <button className="flex items-center gap-2 px-6 py-3 bg-black text-white rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-orange-500 transition-all active:scale-95 shadow-lg shadow-black/10">
+          <button className="flex items-center gap-2 px-6 py-3 bg-black text-white rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-red-600 transition-all active:scale-95 shadow-lg shadow-black/10">
             <SlidersHorizontal size={14} /> Filter Results
           </button>
           {['Europe', 'Asia', 'America', 'Budget', 'Luxury'].map((cat) => (
-            <button key={cat} className="px-6 py-3 bg-gray-50 border border-gray-100 rounded-xl text-[10px] font-black uppercase tracking-widest text-gray-500 hover:border-orange-500 hover:text-orange-500 transition-all active:scale-95">
+            <button key={cat} className="px-6 py-3 bg-gray-50 border border-gray-100 rounded-xl text-[10px] font-black uppercase tracking-widest text-gray-500 hover:border-red-600 hover:text-red-600 transition-all active:scale-95">
               {cat}
             </button>
           ))}
@@ -126,7 +126,7 @@ const AllToursPage = () => {
         <div className="mb-12 flex items-center gap-4">
           <div className="h-px flex-1 bg-gray-100"></div>
           <p className="text-gray-400 text-xs font-black uppercase tracking-widest">
-            Showing <span className="text-orange-500">{filteredTours.length}</span> Premium Experiences
+            Showing <span className="text-red-600">{filteredTours.length}</span> Premium Experiences
           </p>
           <div className="h-px flex-1 bg-gray-100"></div>
         </div>
@@ -152,7 +152,7 @@ const AllToursPage = () => {
             <p className="text-gray-500 mt-2">Try adjusting your search to find your perfect getaway.</p>
             <button 
               onClick={() => setSearchQuery("")}
-              className="mt-8 text-orange-500 font-black uppercase tracking-widest text-xs border-b-2 border-orange-500 pb-1"
+              className="mt-8 text-red-600 font-black uppercase tracking-widest text-xs border-b-2 border-red-600 pb-1"
             >
               Clear all filters
             </button>

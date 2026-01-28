@@ -33,9 +33,9 @@ const TourDetails = () => {
   if (!tour) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center space-y-4">
-        <Info size={48} className="text-orange-500" />
+        <Info size={48} className="text-red-600" />
         <h1 className="text-2xl font-black uppercase">Tour data not found!</h1>
-        <a href="/tours" className="text-orange-500 font-bold underline">Return to Tours</a>
+        <a href="/tours" className="text-red-600 font-bold underline">Return to Tours</a>
       </div>
     );
   }
@@ -117,7 +117,7 @@ const TourDetails = () => {
           {/* Destination Badges */}
           <div className="flex flex-wrap gap-4 items-center">
             <div className="flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-full text-gray-600">
-              <MapPin size={18} className="text-orange-500" />
+              <MapPin size={18} className="text-red-600" />
               <span className="font-bold text-sm uppercase tracking-wider">
                 {tour.itinerary.map((p) => p.city).join(" • ")}
               </span>
@@ -149,7 +149,7 @@ const TourDetails = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {tour.includes?.map((item, i) => (
                 <div key={i} className="flex items-center gap-3 text-gray-700 font-bold">
-                  <CheckCircle2 className="text-orange-500" size={20} />
+                  <CheckCircle2 className="text-red-600" size={20} />
                   <span>{item}</span>
                 </div>
               ))}
@@ -163,7 +163,7 @@ const TourDetails = () => {
             <div>
               <span className="text-gray-400 text-xs font-black uppercase tracking-widest">Pricing Starts From</span>
               <div className="flex items-baseline gap-1">
-                <span className="text-5xl font-black text-orange-500 tracking-tighter">₹{tour.startingPrice}</span>
+                <span className="text-5xl font-black text-red-600 tracking-tighter">₹{tour.startingPrice}</span>
                 <span className="text-gray-400 font-bold uppercase text-xs">/ guest</span>
               </div>
             </div>
@@ -191,10 +191,10 @@ const TourDetails = () => {
             <button 
               onClick={handleSubmit}
               disabled={loading}
-              className="group relative w-full py-6 bg-black hover:bg-orange-500 text-white rounded-2xl font-black uppercase tracking-[0.2em] text-xs transition-all duration-500 shadow-2xl disabled:opacity-50"
+              className="group relative w-full py-6 bg-black hover:bg-red-600 text-white rounded-2xl font-black uppercase tracking-[0.2em] text-xs transition-all duration-500 shadow-2xl disabled:opacity-50"
             >
               <span className="relative z-10">{loading ? "Sending Inquiry..." : "Confirm Booking"}</span>
-              <div className="absolute inset-0 bg-orange-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 rounded-2xl" />
+              <div className="absolute inset-0 bg-red-600 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 rounded-2xl" />
             </button>
 
             <div className="flex items-center justify-center gap-4 text-[10px] font-black uppercase tracking-widest text-gray-400">
@@ -214,7 +214,7 @@ const TourDetails = () => {
 // Helper Components for Cleaner JSX
 const StatBox = ({ icon, label, value }) => (
   <div className="flex flex-col space-y-1">
-    <div className="flex items-center gap-2 text-orange-500 mb-1">
+    <div className="flex items-center gap-2 text-red-600 mb-1">
       {React.cloneElement(icon, { size: 18 })}
       <span className="text-[10px] uppercase font-black tracking-widest text-gray-400">{label}</span>
     </div>
@@ -223,7 +223,7 @@ const StatBox = ({ icon, label, value }) => (
 );
 
 const InputField = ({ label, type, placeholder, defaultValue, onChange }) => (
-  <div className="p-4 bg-gray-50 rounded-2xl border border-gray-100 focus-within:border-orange-500/50 transition-colors">
+  <div className="p-4 bg-gray-50 rounded-2xl border border-gray-100 focus-within:border-red-600/50 transition-colors">
     <label className="block text-[10px] font-black uppercase text-gray-400 mb-1">{label}</label>
     <input 
       type={type} 

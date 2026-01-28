@@ -81,7 +81,7 @@ const ContactPage = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-3 py-1 bg-orange-500/20 rounded-full text-orange-500 font-bold text-[10px] uppercase tracking-[0.3em] mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1 bg-red-600/20 rounded-full text-red-600 font-bold text-[10px] uppercase tracking-[0.3em] mb-6"
           >
             <MessageSquare className="w-3 h-3" />
             Get In Touch
@@ -94,7 +94,7 @@ const ContactPage = () => {
             className="text-5xl md:text-7xl font-black text-white tracking-tighter"
           >
             Let’s Plan Your <br />
-            <span className="text-orange-500 font-serif italic font-medium">
+            <span className="text-red-600 font-serif italic font-medium">
               Next Adventure
             </span>
           </motion.h1>
@@ -124,11 +124,11 @@ const ContactPage = () => {
             <div className="space-y-8">
               <div className="flex gap-6 items-start">
                 <div className="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center shrink-0">
-                  <Phone className="text-orange-500" />
+                  <Phone className="text-red-600" />
                 </div>
                 <div>
                   <h3 className="font-black text-gray-900 uppercase text-sm tracking-widest">Call Us</h3>
-                  <a href="tel:+919810655656" className="text-lg lg:text-xl font-bold text-gray-800 hover:text-orange-500 transition">
+                  <a href="tel:+919810655656" className="text-lg lg:text-xl font-bold text-gray-800 hover:text-red-600 transition">
                     +91 9810-655-656
                   </a>
                   <p className="text-gray-500 text-sm">Mon–Fri from 9am to 6pm</p>
@@ -137,11 +137,11 @@ const ContactPage = () => {
 
               <div className="flex gap-6 items-start">
                 <div className="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center shrink-0">
-                  <Mail className="text-orange-500" />
+                  <Mail className="text-red-600" />
                 </div>
                 <div>
                   <h3 className="font-black text-gray-900 uppercase text-sm tracking-widest">Email Us</h3>
-                  <a href="mailto:travel@qcdtravels.com" className="text-lg lg:text-xl font-bold text-gray-800 hover:text-orange-500 transition">
+                  <a href="mailto:travel@qcdtravels.com" className="text-lg lg:text-xl font-bold text-gray-800 hover:text-red-600 transition">
                     travel@qcdtravels.com
                   </a>
                   <p className="text-gray-500 text-sm">Online support 24/7</p>
@@ -150,7 +150,7 @@ const ContactPage = () => {
 
               <div className="flex gap-6 items-start">
                 <div className="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center shrink-0">
-                  <MapPin className="text-orange-500" />
+                  <MapPin className="text-red-600" />
                 </div>
                 <div>
                   <h3 className="font-black text-gray-900 uppercase text-sm tracking-widest">Visit Office</h3>
@@ -181,7 +181,7 @@ const ContactPage = () => {
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
                     placeholder="John Doe"
-                    className="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-orange-500 outline-none transition-all"
+                    className="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-red-600 outline-none transition-all"
                   />
                 </div>
 
@@ -193,7 +193,7 @@ const ContactPage = () => {
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
                     placeholder="john@example.com"
-                    className="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-orange-500 outline-none transition-all"
+                    className="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-red-600 outline-none transition-all"
                   />
                 </div>
               </div>
@@ -203,7 +203,7 @@ const ContactPage = () => {
                 <select 
                   value={formData.destination}
                   onChange={(e) => setFormData({...formData, destination: e.target.value})}
-                  className="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-orange-500 outline-none bg-white"
+                  className="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-red-600 outline-none bg-white"
                 >
                   <option value="Indonesia">Indonesia</option>
                   <option value="Thailand">Thailand</option>
@@ -221,14 +221,14 @@ const ContactPage = () => {
                   value={formData.message}
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
                   placeholder="Tell us about your dream trip..."
-                  className="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-orange-500 outline-none resize-none"
+                  className="w-full px-6 py-4 rounded-2xl border border-gray-200 focus:border-red-600 outline-none resize-none"
                 />
               </div>
 
               <button 
                 type="submit"
                 disabled={loading}
-                className="w-full py-5 bg-orange-500 hover:bg-black text-white rounded-2xl font-black uppercase tracking-[0.2em] text-xs transition-all duration-500 flex items-center justify-center gap-3 group shadow-xl shadow-orange-500/20 disabled:opacity-50"
+                className="w-full py-5 bg-red-600 hover:bg-black text-white rounded-2xl font-black uppercase tracking-[0.2em] text-xs transition-all duration-500 flex items-center justify-center gap-3 group shadow-xl shadow-red-600/20 disabled:opacity-50"
               >
                 {loading ? "Sending..." : "Send Message"}
                 <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

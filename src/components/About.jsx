@@ -13,10 +13,10 @@ const About = () => {
   return (
     <section className="max-w-full mx-auto px-6 py-10 lg:py-24 relative overflow-hidden bg-white">
       {/* Background Gradients */}
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-500/80 via-white to-orange-500/80 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-red-600/80 via-white to-blue-500/80 pointer-events-none" />
       
       {/* Decorative floating particles */}
-      <div className="absolute top-20 right-20 w-72 h-72 bg-orange-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" />
+      <div className="absolute top-20 right-20 w-72 h-72 bg-red-600/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" />
       <div className="absolute bottom-32 left-24 w-96 h-96 bg-teal-400/5 rounded-full mix-blend-multiply filter blur-2xl animate-pulse delay-1000" />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
@@ -83,7 +83,7 @@ const About = () => {
           </motion.div>
 
           {/* Decorative shine effect */}
-          <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-orange-200/20 rounded-full blur-xl -z-10 animate-pulse" />
+          <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-red-200/20 rounded-full blur-xl -z-10 animate-pulse" />
         </div>
 
         {/* RIGHT SIDE: CONTENT */}
@@ -94,14 +94,14 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-orange-100 rounded-full text-orange-600 font-bold text-[11px] uppercase tracking-[0.2em] mb-8 self-start shadow-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-red-100 rounded-full text-red-600 font-bold text-[11px] uppercase tracking-[0.2em] mb-8 self-start shadow-sm">
             <Award className="w-3.5 h-3.5" />
             Our Story
           </div>
           
           <h2 className="text-5xl lg:text-6xl font-black text-gray-900 leading-tight tracking-tight mb-8">
             Experience The <br />
-            <span className="text-orange-500 font-serif italic font-medium">Beautiful</span> Destinations
+            <span className="text-red-600 font-serif italic font-medium">Beautiful</span> Destinations
           </h2>
           
           <p className="text-xl text-gray-700 leading-relaxed max-w-xl mb-12">
@@ -117,13 +117,13 @@ const About = () => {
             ].map((stat, idx) => (
               <motion.div 
                 key={idx}
-                className="group flex-1 min-w-[140px] p-6 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-orange-200/30 hover:border-orange-200 transition-all duration-500"
+                className="group flex-1 min-w-[140px] p-6 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-red-200/30 hover:border-red-200 transition-all duration-500"
                 whileHover={{ y: -10 }}
               >
-                <div className="w-12 h-12 rounded-2xl bg-orange-100 text-orange-500 flex items-center justify-center mb-5 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">
+                <div className="w-12 h-12 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center mb-5 group-hover:bg-red-600 group-hover:text-white transition-all duration-300">
                   <stat.icon size={22} />
                 </div>
-                <h4 className="text-3xl font-black text-gray-900 mb-1 leading-none group-hover:text-orange-600 transition-colors">
+                <h4 className="text-3xl font-black text-gray-900 mb-1 leading-none group-hover:text-red-600 transition-colors">
                   {stat.value}
                 </h4>
                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">

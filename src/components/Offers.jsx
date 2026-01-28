@@ -7,7 +7,7 @@ import { Plane } from 'lucide-react';
 
 const Offers = () => {
   return (
-    <section className="relative w-full py-10 lg:py-24 px-6 bg-gradient-to-br from-orange-500/80 via-white/50 to-orange-500/90 overflow-hidden font-['Inter_Variable']">
+    <section className="relative w-full py-10 lg:py-24 px-6 bg-gradient-to-br from-red-600/80 via-white to-blue-500/80 overflow-hidden font-['Inter_Variable']">
       
       {/* Background Decorative Text - Drifting animation */}
       <motion.div 
@@ -15,13 +15,13 @@ const Offers = () => {
         animate={{ x: ["-48%", "-52%", "-48%"] }}
         transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
       >
-        <h1 className="text-[15vw] font-black text-orange-900 whitespace-nowrap">
+        <h1 className="text-[15vw] font-black text-red-900 whitespace-nowrap">
           SPECIAL OFFERS • SPECIAL OFFERS
         </h1>
       </motion.div>
 
       {/* Background Gradients to match brand */}
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-500/80 via-white to-orange-500/80 -z-20" />
+      <div className="absolute inset-0 bg-gradient-to-br from-red-500/80 via-white to-red-500/80 -z-20" />
 
       <div className="max-w-6xl mx-auto">
         
@@ -31,7 +31,7 @@ const Offers = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 bg-orange-100 backdrop-blur-sm rounded-full text-orange-600 font-bold text-[10px] uppercase tracking-[0.2em] mb-4 shadow-sm"
+            className="inline-flex items-center gap-2 px-3 py-1 bg-red-100 backdrop-blur-sm rounded-full text-red-600 font-bold text-[10px] uppercase tracking-[0.2em] mb-4 shadow-sm"
           >
             <FiTag className="w-3 h-3" />
             Limited Time Only
@@ -44,7 +44,7 @@ const Offers = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Summer <span className="text-orange-500 font-serif italic font-medium">Flash</span> Deals
+            Summer <span className="text-red-500 font-serif italic font-medium">Flash</span> Deals
           </motion.h2>
           
           <motion.p 
@@ -66,7 +66,7 @@ const Offers = () => {
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             className="hidden xl:block absolute -left-20 top-1/2 -translate-y-1/2 z-20"
           >
-            <div className="w-16 h-16 rounded-2xl bg-white shadow-xl flex items-center justify-center text-orange-500 border border-orange-50">
+            <div className="w-16 h-16 rounded-2xl bg-white shadow-xl flex items-center justify-center text-red-500 border border-red-50">
               <FiCompass size={32} />
             </div>
           </motion.div>
@@ -94,12 +94,12 @@ const Offers = () => {
             {/* Info Bar */}
             <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md rounded-2xl p-5 shadow-2xl flex justify-between items-center border border-white/50">
               <div>
-                <p className="text-[10px] font-black text-orange-500 uppercase tracking-widest mb-1">Exclusive Promotion</p>
+                <p className="text-[10px] font-black text-red-500 uppercase tracking-widest mb-1">Exclusive Promotion</p>
                 <h3 className="text-xl font-black text-gray-900">Up to 30% Off!</h3>
               </div>
               <motion.button 
                 whileHover={{ x: 5 }}
-                className="w-12 h-12 bg-gray-900 text-white rounded-xl flex items-center justify-center hover:bg-orange-500 transition-colors shadow-lg"
+                className="w-12 h-12 bg-gray-900 text-white rounded-xl flex items-center justify-center hover:bg-red-500 transition-colors shadow-lg"
               >
                 <FiArrowRight size={20} />
               </motion.button>
@@ -129,12 +129,12 @@ const Offers = () => {
             {/* Info Bar */}
             <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md rounded-2xl p-5 shadow-2xl flex justify-between items-center border border-white/50">
               <div>
-                <p className="text-[10px] font-black text-orange-500 uppercase tracking-widest mb-1">Local Expertise</p>
+                <p className="text-[10px] font-black text-red-500 uppercase tracking-widest mb-1">Local Expertise</p>
                 <h3 className="text-xl font-black text-gray-900">Expert Trip Guides</h3>
               </div>
               <motion.button 
                 whileHover={{ x: 5 }}
-                className="w-12 h-12 bg-gray-900 text-white rounded-xl flex items-center justify-center hover:bg-orange-500 transition-colors shadow-lg"
+                className="w-12 h-12 bg-gray-900 text-white rounded-xl flex items-center justify-center hover:bg-red-500 transition-colors shadow-lg"
               >
                 <FiArrowRight size={20} />
               </motion.button>
@@ -144,7 +144,7 @@ const Offers = () => {
 
         {/* Brand Plane Icon */}
         <motion.div 
-          className="flex justify-center mt-12 text-orange-500/20"
+          className="flex justify-center mt-12 text-red-500/20"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
         >

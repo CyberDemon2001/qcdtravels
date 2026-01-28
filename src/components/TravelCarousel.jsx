@@ -69,14 +69,14 @@ const TravelCarousel = () => {
             exit={{ y: -30, opacity: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-500/10 rounded-full text-orange-500 font-bold text-[10px] uppercase tracking-[0.3em] mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-500/10 rounded-full text-red-600 font-bold text-[10px] uppercase tracking-[0.3em] mb-6">
               <FiAward className="w-3 h-3" />
               World Class
             </div>
 
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.85] mb-8">
               {SLIDES[activeIndex].title}
-              <span className="block text-orange-500 font-serif italic font-medium opacity-90 text-[0.5em] tracking-normal mt-4">
+              <span className="block text-red-600 font-serif italic font-medium opacity-90 text-[0.5em] tracking-normal mt-4">
                 Grand Adventure
               </span>
             </h1>
@@ -85,7 +85,7 @@ const TravelCarousel = () => {
               {SLIDES[activeIndex].description}
             </p>
 
-            <button className="px-10 py-4 bg-orange-500 hover:bg-orange-600 transition-all rounded-2xl flex items-center gap-4 w-fit shadow-xl shadow-orange-500/20 font-black uppercase tracking-widest text-xs">
+            <button className="px-10 py-4 bg-gradient-to-r from-red-600 to-blue-700 transition-all rounded-2xl flex items-center gap-4 w-fit shadow-xl shadow-red-500/20 font-black uppercase tracking-widest text-xs">
               Explore Now <FiArrowRight size={18} />
             </button>
           </motion.div>
@@ -122,7 +122,7 @@ const TravelCarousel = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6">
-                  <p className="text-xs font-black text-orange-500 uppercase tracking-widest mb-1">{slide.location}</p>
+                  <p className="text-xs font-black text-red-600 uppercase tracking-widest mb-1">{slide.location}</p>
                 </div>
               </div>
             </SwiperSlide>
@@ -132,12 +132,12 @@ const TravelCarousel = () => {
       
       {/* 4. Brand-Aligned Progress Bar */}
       <div className="absolute lg:left-10 left-1 top-1/2 -translate-y-1/2 flex flex-col items-center gap-8 z-20">
-        <span className="lg:text-[12px] text-[10xl] font-black text-orange-500 uppercase tracking-widest rotate-90 mb-4">
+        <span className="lg:text-[12px] text-[10xl] font-black text-red-600 uppercase tracking-widest rotate-90 mb-4">
             0{activeIndex + 1} / 0{SLIDES.length}
         </span>
         <div className="w-[1.5px] h-32 bg-white/10 relative rounded-full">
           <motion.div 
-            className="absolute top-0 w-full bg-orange-500"
+            className="absolute top-0 w-full bg-red-600"
             animate={{ height: `${((activeIndex + 1) / SLIDES.length) * 100}%` }}
           />
         </div>

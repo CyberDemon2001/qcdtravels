@@ -29,7 +29,7 @@ const PopularDestinations = () => {
       >
         <div className="w-full md:w-2/3">
           <motion.div 
-            className="inline-flex items-center gap-2 px-3 py-1 bg-orange-100 rounded-full text-orange-500 font-bold text-[10px] uppercase tracking-[0.2em] mb-4"
+            className="inline-flex items-center gap-2 px-3 py-1 bg-red-100 rounded-full text-red-600 font-bold text-[10px] uppercase tracking-[0.2em] mb-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -45,8 +45,8 @@ const PopularDestinations = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            Popular <span className="text-orange-500 font-serif italic font-medium">Getaways</span>
-            <Plane className="w-9 h-9 text-orange-500 hidden sm:block" strokeWidth={2.5} />
+            Popular <span className="text-red-600 font-serif italic font-medium">Getaways</span>
+            <Plane className="w-9 h-9 text-red-600 hidden sm:block" strokeWidth={2.5} />
           </motion.h2>
           
           <motion.p 
@@ -61,7 +61,7 @@ const PopularDestinations = () => {
         </div>
         <Link href="/destinations">
         <motion.button 
-          className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-2xl flex items-center gap-4 transition-all duration-300 text-xs font-black shadow-lg uppercase tracking-widest"
+          className="bg-red-600 hover:bg-red-600 text-white px-8 py-4 rounded-2xl flex items-center gap-4 transition-all duration-300 text-xs font-black shadow-lg uppercase tracking-widest"
           whileHover={{ y: -5 }}
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -122,7 +122,7 @@ const PopularDestinations = () => {
                 {/* Label Overlay */}
                 <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-[85%] z-10">
                   <motion.div 
-                    className="bg-orange-500 hover:bg-orange-600 transition-colors text-white text-center py-3 rounded-2xl font-bold text-xl shadow-lg"
+                    className="bg-red-600 hover:bg-red-600 transition-colors text-white text-center py-3 rounded-2xl font-bold text-xl shadow-lg"
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 400 }}
                   >
@@ -140,13 +140,13 @@ const PopularDestinations = () => {
 
         {/* Custom Controls */}
         <div className="flex items-center justify-center gap-6 mt-8">
-          <button className="popular-prev p-2 text-gray-900 hover:text-orange-500 transition-colors disabled:opacity-30">
+          <button className="popular-prev p-2 text-gray-900 hover:text-red-600 transition-colors disabled:opacity-30">
             <ChevronLeft size={32} strokeWidth={2.5} />
           </button>
           
           <div className="popular-pagination !static flex gap-2 w-auto"></div>
           
-          <button className="popular-next p-2 text-gray-900 hover:text-orange-500 transition-colors disabled:opacity-30">
+          <button className="popular-next p-2 text-gray-900 hover:text-red-600 transition-colors disabled:opacity-30">
             <ChevronRight size={32} strokeWidth={2.5} />
           </button>
         </div>
@@ -161,7 +161,7 @@ const PopularDestinations = () => {
           transition: all 0.3s;
         }
         .popular-pagination .swiper-pagination-bullet-active {
-          background: #f97316; /* Matches orange-500 */
+          background: #f97316; /* Matches red-600 */
           width: 24px;
           border-radius: 4px;
         }

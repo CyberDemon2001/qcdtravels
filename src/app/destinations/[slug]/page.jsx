@@ -19,9 +19,9 @@ const DestinationDetail = () => {
   if (!data) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center space-y-4">
-        <Info size={48} className="text-orange-500" />
+        <Info size={48} className="text-red-600" />
         <h1 className="text-2xl font-black uppercase">Destination not found!</h1>
-        <a href="/destinations" className="text-orange-500 font-bold underline">Return to Destinations</a>
+        <a href="/destinations" className="text-red-600 font-bold underline">Return to Destinations</a>
       </div>
     );
   }
@@ -83,7 +83,7 @@ const DestinationDetail = () => {
           transition={{ repeat: Infinity, duration: 2 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50"
         >
-          <div className="w-px h-12 bg-gradient-to-t from-orange-500 to-transparent mx-auto" />
+          <div className="w-px h-12 bg-gradient-to-t from-red-600 to-transparent mx-auto" />
         </motion.div>
       </section>
 
@@ -95,12 +95,12 @@ const DestinationDetail = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-100 rounded-full text-orange-500 font-black text-[10px] uppercase tracking-[0.2em] mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-100 rounded-full text-red-600 font-black text-[10px] uppercase tracking-[0.2em] mb-6">
               <Info className="w-3 h-3" />
               Know the region
             </div>
             <h2 className="text-4xl md:text-6xl font-black text-gray-900 tracking-tighter uppercase mb-8">
-              Experience <span className="text-orange-500 font-serif italic font-medium">True</span> {data.name}
+              Experience <span className="text-red-600 font-serif italic font-medium">True</span> {data.name}
             </h2>
             <p className="text-gray-500 text-xl leading-relaxed mb-8">
               {data.about}
@@ -109,7 +109,7 @@ const DestinationDetail = () => {
             <div className="space-y-4">
               {data.highlights.map((item, idx) => (
                 <div key={idx} className="flex items-center gap-4 text-gray-800 font-bold">
-                  <CheckCircle2 className="text-orange-500 w-6 h-6" />
+                  <CheckCircle2 className="text-red-600 w-6 h-6" />
                   {item}
                 </div>
               ))}
@@ -128,7 +128,7 @@ const DestinationDetail = () => {
             </div>
             {/* Floating Stats */}
             <div className="absolute -bottom-6 -left-6 bg-black text-white p-8 rounded-[2rem] shadow-2xl">
-               <p className="text-4xl font-black text-orange-500">42+</p>
+               <p className="text-4xl font-black text-red-600">42+</p>
                <p className="text-[10px] uppercase font-black tracking-widest text-gray-400">Handpicked Tours</p>
             </div>
           </motion.div>
@@ -140,9 +140,9 @@ const DestinationDetail = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <h2 className="text-4xl font-black text-gray-900 uppercase tracking-tighter leading-none">
-              Explore <span className="text-orange-500">{data.name}</span> <br /> Tour Packages
+              Explore <span className="text-red-600">{data.name}</span> <br /> Tour Packages
             </h2>
-            <Link href="/tours" className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-orange-500 border-b-2 border-orange-500 pb-1">
+            <Link href="/tours" className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-red-600 border-b-2 border-red-600 pb-1">
               View All Tours <ArrowRight size={16} />
             </Link>
           </div>

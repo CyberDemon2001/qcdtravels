@@ -15,7 +15,7 @@ const features = [
     title: "Unlimited Destinations",
     desc: "Explore 1000+ destinations worldwide with exclusive deals and curated travel itineraries.",
     icon: FiGlobe,
-    color: "from-orange-500 to-orange-600",
+    color: "from-red-500 to-red-600",
     stats: "1.2k+",
     label: "Destinations",
     href: "/destinations",
@@ -52,9 +52,9 @@ const Features = () => {
   }, []);
 
   return (
-    <section className="px-6 md:px-12 lg:px-24 py-10 lg:py-24 bg-gradient-to-br from-orange-500/80 via-white to-orange-500/90 overflow-hidden font-['Inter_Variable']">
+    <section className="px-6 md:px-12 lg:px-24 py-10 lg:py-24 bg-gradient-to-br from-red-600/80 via-white to-blue-500/80 overflow-hidden font-['Inter_Variable']">
       {/* Background Subtle Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 via-white to-orange-100/20 -z-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-red-50/50 via-white to-blue-100/20 -z-10 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-20">
@@ -66,14 +66,14 @@ const Features = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-100 rounded-full text-orange-600 font-bold text-[10px] uppercase tracking-[0.2em] mb-6 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-100 rounded-full text-red-600 font-bold text-[10px] uppercase tracking-[0.2em] mb-6 shadow-sm">
               <FiAward className="w-3.5 h-3.5" />
               The TravelDidi Edge
             </div>
 
             <h2 className="text-4xl lg:text-5xl font-black mb-6 leading-tight text-gray-900 tracking-tight">
               Crafting Your <br />
-              <span className="text-orange-500 font-serif italic font-medium">
+              <span className="text-red-600 font-serif italic font-medium">
                 Perfect
               </span>{" "}
               Escape
@@ -117,7 +117,7 @@ const Features = () => {
         onMouseEnter={() => setActiveIndex(idx)}
         className={`group relative p-6 lg:p-8 rounded-[2.5rem] transition-all duration-500 cursor-pointer border-2 ${
           isActive 
-          ? "bg-white border-orange-500 shadow-2xl shadow-orange-200/40 scale-[1.02]" 
+          ? "bg-white border-red-600 shadow-2xl shadow-red-200/40 scale-[1.02]" 
           : "bg-gray-50/50 border-transparent hover:bg-gray-50"
         }`}
         layout
@@ -125,7 +125,7 @@ const Features = () => {
         {isActive && (
           <motion.div 
             layoutId="activeGlow"
-            className="absolute inset-0 bg-orange-50/30 rounded-[2.5rem] -z-10"
+            className="absolute inset-0 bg-red-50/30 rounded-[2.5rem] -z-10"
             transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
           />
         )}
@@ -159,7 +159,7 @@ const Features = () => {
           </div>
 
           <div className={`transition-all duration-500 ${isActive ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}>
-            <FiChevronRight className="text-orange-500" size={28} strokeWidth={3} />
+            <FiChevronRight className="text-red-600" size={28} strokeWidth={3} />
           </div>
         </div>
       </motion.div>

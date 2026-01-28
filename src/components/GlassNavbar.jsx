@@ -28,7 +28,7 @@ const GlassNavbar = () => {
           className={`relative rounded-[2rem] p-4 lg:px-8 py-3 bg-white/40 flex items-center justify-between border transition-all duration-500 ${
             isScrolled
               ? "bg-white/80 backdrop-blur-xl border-gray-200 shadow-xl"
-              : "bg-white/10 backdrop-blur-md border-white/20 shadow-lg"
+              : "bg-white/50 backdrop-blur-md border-white/20 shadow-lg"
           }`}
         >
           {/* Logo */}
@@ -49,7 +49,7 @@ const GlassNavbar = () => {
               <Link
                 key={item}
                 href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                className={`text-[13px] font-black uppercase tracking-widest transition hover:text-orange-500 ${
+                className={`text-[13px] font-black uppercase tracking-widest transition hover:text-red-600 ${
                   isScrolled ? "text-gray-600" : "text-white/80"
                 }`}
               >
@@ -60,7 +60,7 @@ const GlassNavbar = () => {
 
           {/* Desktop Button */}
           <div className="hidden md:flex">
-            <button className="px-6 py-2 bg-orange-500 hover:bg-teal-700 text-white rounded-xl shadow-lg shadow-orange-500/20 text-xs font-black uppercase tracking-widest transition active:scale-95">
+            <button className="px-6 py-2 bg-gradient-to-r from-red-600 to-blue-700 text-white rounded-xl shadow-lg shadow-red-600/20 text-xs font-black uppercase tracking-widest transition active:scale-95">
               Book Now
             </button>
           </div>
@@ -103,14 +103,14 @@ const GlassNavbar = () => {
                     key={item}
                     href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                     onClick={() => setIsOpen(false)}
-                    className={`text-sm font-black uppercase tracking-widest transition hover:text-orange-500 ${
+                    className={`text-sm font-black uppercase tracking-widest transition hover:text-blue-500 ${
                       isScrolled ? "text-gray-700" : "text-white/90"
                     }`}
                   >
                     {item}
                   </Link>
                 ))}
-                <button className="w-full py-4 bg-orange-500 hover:bg-teal-700 text-white rounded-xl font-black uppercase tracking-widest text-xs transition shadow-lg shadow-orange-500/20 active:scale-[0.98]">
+                <button className="w-full py-4 bg-blue-500 hover:bg-teal-700 text-white rounded-xl font-black uppercase tracking-widest text-xs transition shadow-lg shadow-blue-500/20 active:scale-[0.98]">
                   Book Now
                 </button>
               </div>

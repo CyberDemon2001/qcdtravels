@@ -49,14 +49,14 @@ const TopDestinations = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-100 rounded-full text-orange-600 font-bold text-[10px] uppercase tracking-[0.2em] mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-100 rounded-full text-red-600 font-bold text-[10px] uppercase tracking-[0.2em] mb-6">
               <Award className="w-3 h-3" />
               Top Picked
             </div>
             
             <h2 className="text-4xl lg:text-5xl font-black mb-6 leading-tight text-gray-900 tracking-tight">
               Explore The <br />
-              <span className="text-orange-500 font-serif italic font-medium">Beauty</span> of India
+              <span className="text-red-600 font-serif italic font-medium">Beauty</span> of India
             </h2>
             
             <p className="text-gray-500 text-base leading-relaxed mb-10 max-w-xs">
@@ -65,11 +65,11 @@ const TopDestinations = () => {
 
             {/* <Link href="/destinations">
             <motion.button 
-              className="hidden lg:flex items-center gap-3 text-sm font-black text-gray-900 hover:text-orange-500 transition-all group"
+              className="hidden lg:flex items-center gap-3 text-sm font-black text-gray-900 hover:text-red-600 transition-all group"
               whileHover={{ x: 5 }}
             >
               VIEW ALL DESTINATIONS
-              <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-orange-500 group-hover:text-white transition-all">
+              <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-red-600 group-hover:text-white transition-all">
                 <ArrowRight className="w-5 h-5" />
               </div>
             </motion.button>
@@ -81,7 +81,7 @@ const TopDestinations = () => {
             {destinations.map((dest, index) => (
               <motion.div 
                 key={dest.id} 
-                className="group bg-white rounded-[2.5rem] p-3 border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-orange-100/40 hover:border-orange-100 transition-all duration-500"
+                className="group bg-white rounded-[2.5rem] p-3 border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-red-100/40 hover:border-red-100 transition-all duration-500"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -97,7 +97,7 @@ const TopDestinations = () => {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full text-[10px] font-black text-orange-600 uppercase tracking-widest shadow-lg z-10">
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full text-[10px] font-black text-red-600 uppercase tracking-widest shadow-lg z-10">
                     {dest.category}
                   </div>
                 </div>
@@ -105,11 +105,11 @@ const TopDestinations = () => {
                 {/* Content Area */}
                 <div className="p-5">
                   <div className="flex items-center text-gray-400 text-[10px] font-black uppercase tracking-[0.15em] mb-2">
-                    <MapPin size={14} className="mr-1 text-orange-500" />
+                    <MapPin size={14} className="mr-1 text-red-600" />
                     <span>{dest.name.split(',')[1]}</span>
                   </div>
                   
-                  <h3 className="text-xl font-black text-gray-900 mb-3 group-hover:text-orange-600 transition-colors">
+                  <h3 className="text-xl font-black text-gray-900 mb-3 group-hover:text-red-600 transition-colors">
                     {dest.name.split(',')[0]}
                   </h3>
                   
@@ -120,7 +120,7 @@ const TopDestinations = () => {
                   {/* Footer Stats */}
                   <div className="flex items-center justify-between pt-5 border-t border-gray-50">
                     <div className="flex items-center text-[11px] font-black text-gray-700 uppercase">
-                      <Clock size={16} className="mr-2 text-orange-500" />
+                      <Clock size={16} className="mr-2 text-red-600" />
                       {dest.duration}
                     </div>
                     <div className="flex items-center bg-gray-900 px-3 py-1 rounded-lg text-white text-xs font-black">

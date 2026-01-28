@@ -42,7 +42,7 @@ const ToursCard = ({ item, index }) => {
       >
         {/* IMAGE */}
         <div className="relative h-[280px] w-full rounded-[2.5rem] overflow-hidden shadow-2xl z-0 bg-slate-100">
-          <div className="absolute top-2 left-1/2 -translate-x-1/2 z-30 px-3 py-1 rounded-2xl bg-orange-500 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-widest shadow-lg border border-white/10">
+          <div className="absolute top-2 left-1/2 -translate-x-1/2 z-30 px-3 py-1 rounded-2xl bg-red-600 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-widest shadow-lg border border-white/10">
             {item?.duration?.days}Days / {item?.duration?.nights}Nights
           </div>
           <Image
@@ -61,12 +61,12 @@ const ToursCard = ({ item, index }) => {
           whileHover={{ y: -5, backgroundColor: "rgba(255, 255, 255, 1)" }}
           transition={{ type: "spring", stiffness: 300 }}
         >
-          <h3 className="font-black text-lg text-gray-900 leading-tight mb-2 line-clamp-2 group-hover:text-orange-500 transition-colors uppercase tracking-tighter">
+          <h3 className="font-black text-lg text-gray-900 leading-tight mb-2 line-clamp-2 group-hover:text-red-600 transition-colors uppercase tracking-tighter">
             {item.title}
           </h3>
 
           <div className="flex items-start text-gray-500 h-6 overflow-hidden">
-            <MapPin size={16} className="text-orange-500 shrink-0" />
+            <MapPin size={16} className="text-red-600 shrink-0" />
             <span className="text-xs font-bold line-clamp-2">{citiesList}</span>
           </div>
 
@@ -104,12 +104,12 @@ const ToursCard = ({ item, index }) => {
                 Starting from
               </span>
               <div className="flex items-baseline gap-1">
-                <span className="text-orange-500 font-black text-xl">₹{item.startingPrice}</span>
+                <span className="text-red-600 font-black text-xl">₹{item.startingPrice}</span>
                 <span className="text-[9px] font-black text-gray-400 uppercase">/ person</span>
               </div>
             </div>
 
-            <div className="w-10 h-10 bg-gray-50 rounded-xl flex items-center justify-center text-gray-900 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">
+            <div className="w-10 h-10 bg-gray-50 rounded-xl flex items-center justify-center text-gray-900 group-hover:bg-red-600 group-hover:text-white transition-all duration-300">
               <ArrowRight size={18} />
             </div>
           </div>

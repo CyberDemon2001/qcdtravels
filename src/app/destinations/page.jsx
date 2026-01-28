@@ -19,14 +19,14 @@ const DestinationsPage = () => {
       <section className="relative pt-40 pb-20 bg-black overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none">
              {/* Decorative Map Element */}
-             <Map className="w-full h-full text-orange-500 stroke-[0.5]" />
+             <Map className="w-full h-full text-red-600 stroke-[0.5]" />
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 text-center md:text-left">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="inline-flex items-center gap-2 px-3 py-1 bg-orange-500/20 rounded-full text-orange-500 font-bold text-[10px] uppercase tracking-[0.3em] mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1 bg-red-600/20 rounded-full text-red-600 font-bold text-[10px] uppercase tracking-[0.3em] mb-6"
           >
             <Compass className="w-3 h-3 animate-spin-slow" />
             Where to next?
@@ -38,7 +38,7 @@ const DestinationsPage = () => {
             className="text-6xl md:text-8xl font-black text-white tracking-tighter uppercase leading-[0.9]"
           >
             Our World <br />
-            <span className="text-orange-500 font-serif italic font-medium">Destinations</span>
+            <span className="text-red-600 font-serif italic font-medium">Destinations</span>
           </motion.h1>
           <p className="text-gray-400 mt-8 max-w-xl text-lg leading-relaxed">
             From the bustling streets of London to the serene beaches of Bali, choose your next chapter across our global network.
@@ -75,10 +75,10 @@ const DestinationsPage = () => {
                 <div className="absolute inset-0 p-10 flex flex-col justify-end">
                   <div className="flex justify-between items-end">
                     <div>
-                      <span className="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-md rounded-full text-orange-500 text-[10px] font-black uppercase tracking-widest mb-4">
+                      <span className="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-md rounded-full text-red-600 text-[10px] font-black uppercase tracking-widest mb-4">
                         {dest.count}
                       </span>
-                      <h3 className="text-4xl font-black text-white tracking-tighter uppercase group-hover:text-orange-500 transition-colors">
+                      <h3 className="text-4xl font-black text-white tracking-tighter uppercase group-hover:text-red-600 transition-colors">
                         {dest.name}
                       </h3>
                       <p className="text-gray-300 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
@@ -86,7 +86,7 @@ const DestinationsPage = () => {
                       </p>
                     </div>
                     
-                    <div className="bg-orange-500 p-4 rounded-2xl text-white transform translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="bg-red-600 p-4 rounded-2xl text-white transform translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                       <ArrowUpRight size={24} />
                     </div>
                   </div>
@@ -102,7 +102,7 @@ const DestinationsPage = () => {
 
       {/* --- CALL TO ACTION --- */}
       <section className="max-w-7xl mx-auto px-6 lg:px-12 pb-24">
-        <div className="bg-orange-500 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden group">
+        <div className="bg-red-600 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden group">
           <Plane className="absolute -top-10 -right-10 w-64 h-64 text-white/10 group-hover:rotate-12 transition-transform duration-700" />
           <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase mb-6 relative z-10">
             Don't see your <br /> destination?
