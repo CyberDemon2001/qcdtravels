@@ -15,19 +15,19 @@ import Loader from "@/components/Loader";
 import ChatBot from "@/components/Chatbot";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
   const [chatOpen, setChatOpen] = useState(true);
   const reopenTimerRef = useRef(null);
 
   // 🔥 Check if loader already shown in this session
-  useEffect(() => {
-    const hasLoaded = sessionStorage.getItem("hasLoaded");
+  // useEffect(() => {
+  //   const hasLoaded = sessionStorage.getItem("hasLoaded");
 
-    if (!hasLoaded) {
-      setIsLoading(true);
-      sessionStorage.setItem("hasLoaded", "true");
-    }
-  }, []);
+  //   if (!hasLoaded) {
+  //     setIsLoading(true);
+  //     sessionStorage.setItem("hasLoaded", "true");
+  //   }
+  // }, []);
 
   const closeChat = () => {
     setChatOpen(false);
@@ -40,9 +40,9 @@ export default function Home() {
   return (
     <main className="min-h-screen relative bg-white">
       <AnimatePresence mode="wait">
-        {isLoading ? (
+        {/* {isLoading ? (
           <Loader key="loader" finishLoading={() => setIsLoading(false)} />
-        ) : (
+        ) : ( */}
           <div key="main-content">
             <GlassNavbar />
             <TravelCarousel />
@@ -55,7 +55,7 @@ export default function Home() {
             <ChatBot open={chatOpen} onClose={closeChat} onOpen={openChat} />
             <Footer />
           </div>
-        )}
+        {/* )} */}
       </AnimatePresence>
     </main>
   );

@@ -116,7 +116,7 @@ const trendingDestinations = destinationsByMonth[month];
                   <h4 className="text-sm font-bold mb-3">Get Travel Updates</h4>
                   <div className="flex bg-white/10 rounded-lg p-1 border border-white/10 focus-within:border-red-600 transition-all">
                     <input type="email" placeholder="Email address" className="bg-transparent border-none outline-none px-3 py-2 text-sm w-full" />
-                    <button className="bg-red-600 p-2 rounded-md hover:bg-red-800 transition-colors">
+                    <button className="bg-red-600 p-2 rounded-md hover:bg-red-800 hover:cursor-pointer transition-colors">
                       <Send size={16} />
                     </button>
                   </div>

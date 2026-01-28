@@ -99,7 +99,7 @@ const Offers = () => {
               </div>
               <motion.button 
                 whileHover={{ x: 5 }}
-                className="w-12 h-12 bg-gray-900 text-white rounded-xl flex items-center justify-center hover:bg-red-500 transition-colors shadow-lg"
+                className="w-12 h-12 bg-gray-900 text-white hover:cursor-pointer rounded-xl flex items-center justify-center hover:bg-red-500 transition-colors shadow-lg"
               >
                 <FiArrowRight size={20} />
               </motion.button>
@@ -134,7 +134,7 @@ const Offers = () => {
               </div>
               <motion.button 
                 whileHover={{ x: 5 }}
-                className="w-12 h-12 bg-gray-900 text-white rounded-xl flex items-center justify-center hover:bg-red-500 transition-colors shadow-lg"
+                className="w-12 h-12 bg-gray-900 text-white hover:cursor-pointer rounded-xl flex items-center justify-center hover:bg-red-500 transition-colors shadow-lg"
               >
                 <FiArrowRight size={20} />
               </motion.button>
@@ -144,7 +144,7 @@ const Offers = () => {
 
         {/* Brand Plane Icon */}
         <motion.div 
-          className="flex justify-center mt-12 text-red-500/20"
+          className="flex justify-center mt-12 text-red-500"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
         >

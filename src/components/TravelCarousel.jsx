@@ -5,6 +5,7 @@ import { Autoplay, EffectCoverflow, Navigation } from 'swiper/modules';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowRight, FiAward } from 'react-icons/fi';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
@@ -35,6 +36,7 @@ const SLIDES = [
 
 const TravelCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const router = useRouter();
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black text-white">
@@ -85,7 +87,7 @@ const TravelCarousel = () => {
               {SLIDES[activeIndex].description}
             </p>
 
-            <button className="px-10 py-4 bg-gradient-to-r from-red-600 to-blue-700 transition-all rounded-2xl flex items-center gap-4 w-fit shadow-xl shadow-red-500/20 font-black uppercase tracking-widest text-xs">
+            <button onClick={()=>router.push("/destinations")} className="px-10 py-4 bg-gradient-to-r from-red-600 to-blue-700 transition-all hover:cursor-pointer rounded-2xl flex items-center gap-4 w-fit shadow-xl shadow-red-500/20 font-black uppercase tracking-widest text-xs">
               Explore Now <FiArrowRight size={18} />
             </button>
           </motion.div>

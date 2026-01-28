@@ -73,7 +73,7 @@ const Tours = () => {
         
         <Link href="/tours">
         <motion.button 
-          className="bg-gradient-to-r from-red-600 to-blue-700 text-white px-8 py-4 rounded-2xl flex items-center gap-4 transition-all duration-300 text-xs font-black shadow-lg uppercase tracking-widest"
+          className="bg-gradient-to-r from-red-600 to-blue-700 hover:cursor-pointer text-white px-8 py-4 rounded-2xl flex items-center gap-4 transition-all duration-300 text-xs font-black shadow-lg uppercase tracking-widest"
           whileHover={{ y: -5 }}
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -90,10 +90,10 @@ const Tours = () => {
       {/* Slider Section */}
       <div className="relative">
         <div className="flex gap-3 mb-6 justify-end">
-          <button className="prev-btn w-12 h-12 bg-white hover:bg-red-600 hover:text-white shadow-md rounded-xl flex items-center justify-center text-gray-900 transition-all border border-gray-100">
+          <button className="prev-btn w-12 h-12 bg-white hover:bg-red-600 hover:text-white hover:cursor-pointer shadow-md rounded-xl flex items-center justify-center text-gray-900 transition-all border border-gray-100">
             <ChevronLeft size={20} strokeWidth={3} />
           </button>
-          <button className="next-btn w-12 h-12 bg-white hover:bg-red-600 hover:text-white shadow-md rounded-xl flex items-center justify-center text-gray-900 transition-all border border-gray-100">
+          <button className="next-btn w-12 h-12 bg-white hover:bg-red-600 hover:text-white hover:cursor-pointer shadow-md rounded-xl flex items-center justify-center text-gray-900 transition-all border border-gray-100">
             <ChevronRight size={20} strokeWidth={3} />
           </button>
         </div>
