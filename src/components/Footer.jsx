@@ -30,7 +30,25 @@ const Footer = () => {
     }
   ];
 
-  const destinations = ["Varanasi", "Ladakh", "Munnar", "Goa"];
+  const month = new Date().getMonth(); // 0 = Jan, 11 = Dec
+
+const destinationsByMonth = {
+  0: ["Goa", "Manali", "Auli"],          // Jan
+  1: ["Jaipur", "Udaipur", "Jaisalmer"], // Feb
+  2: ["Rishikesh", "Varanasi", "Hampi"], // Mar
+  3: ["Ooty", "Coorg", "Kodaikanal"],   // Apr
+  4: ["Shimla", "Manali", "Dharamshala"], // May
+  5: ["Ladakh", "Spiti", "Tawang"],     // Jun
+  6: ["Munnar", "Wayanad", "Chikmagalur"], // Jul
+  7: ["Kerala", "Andaman", "Mahabaleshwar"], // Aug
+  8: ["Udaipur", "Jodhpur", "Mount Abu"], // Sep
+  9: ["Goa", "Gokarna", "Pondicherry"], // Oct
+  10:["Pushkar", "Jaipur", "Ranthambore"], // Nov
+  11:["Goa", "Manali", "Kashmir"]       // Dec
+};
+
+
+const trendingDestinations = destinationsByMonth[month];
 
   return (
     <footer className="relative font-['Inter_Variable'] w-full overflow-hidden">
@@ -106,7 +124,7 @@ const Footer = () => {
                   <div className="mt-6 flex items-center gap-3">
                       <span className="text-[10px] font-black uppercase text-red-600 tracking-tighter">Trending:</span>
                       <div className="flex flex-wrap gap-3">
-                        {destinations.map(d => (
+                        {trendingDestinations.map(d => (
                           <span key={d} className="text-[11px] text-gray-400 hover:text-white cursor-pointer transition-colors underline decoration-red-600/30 underline-offset-4">
                             {d}
                           </span>
