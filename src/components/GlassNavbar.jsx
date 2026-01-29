@@ -143,10 +143,10 @@ const GlassNavbar = () => {
                       onClick={() => setIsOpen(false)}
                       className={`text-sm font-black uppercase tracking-widest transition ${
                         active
-                          ? "text-blue-600"
+                          ? "text-red-600"
                           : isScrolled
-                          ? "text-gray-700 hover:text-blue-500"
-                          : "text-white/90 hover:text-blue-400"
+                          ? "text-gray-700 hover:text-red-600"
+                          : "text-white/90 hover:text-red-500"
                       }`}
                     >
                       {item}
@@ -161,8 +161,8 @@ const GlassNavbar = () => {
                   }}
                   className={`w-full py-4 text-white rounded-xl font-black uppercase tracking-widest text-xs transition shadow-lg active:scale-[0.98] ${
                     toursActive
-                      ? "bg-blue-700 shadow-blue-700/30"
-                      : "bg-blue-500 hover:bg-teal-700 shadow-blue-500/20"
+                      ? "bg-red-700 shadow-red-700/30"
+                      : "bg-linear-to-r from-red-600 to-blue-700 shadow-red-600/20"
                   }`}
                 >
                   Book Now
