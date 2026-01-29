@@ -31,7 +31,7 @@ const Tours = () => {
     }, []);
 
   return (
-    <div className="max-w-full mx-auto px-6 md:px-12 lg:px-24 py-10 lg:py-24 font-['Inter_Variable'] relative bg-white">
+    <div className="max-w-full mx-auto px-6 md:px-12 lg:px-12 py-8 lg:py-12 font-['Inter_Variable'] relative bg-white">
       
       {/* Header Section */}
       <motion.div 
@@ -56,7 +56,13 @@ const Tours = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            Our <span className="text-red-600 font-serif italic font-medium">Top</span> Tours
+           <span className="font-serif italic font-medium">
+  <span className="text-green-600 font-bold ">Q</span>
+  <span className="text-blue-600 font-bold ">C</span>
+  <span className="text-red-600 font-bold ">D</span>
+</span>
+<span> Top</span>
+  Destinations
             <Plane className="w-10 h-10 text-red-600 hidden sm:block" />
           </motion.h2>
           

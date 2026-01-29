@@ -105,7 +105,7 @@ const AboutPage = () => {
       <GlassNavbar />
 
       {/* --- HERO SECTION --- */}
-      <section className="relative h-[70vh] flex items-center bg-black overflow-hidden">
+      <section className="relative h-[60vh] lg:h-[70vh] flex items-center bg-black overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-50">
           <Image
             src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1920&q=80"
@@ -136,6 +136,81 @@ const AboutPage = () => {
               adventure
             </span>
           </motion.h1>
+        </div>
+      </section>
+
+       {/* --- DIRECTOR'S MESSAGE --- */}
+      
+      <section className="px-6 lg:px-12 py-12">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-7xl mx-auto bg-gray-950 rounded-[4rem] overflow-hidden relative shadow-2xl"
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-5 items-stretch">
+            <div className="lg:col-span-2 relative min-h-100">
+              <Image
+                src={NirupamKathuriya}
+                alt="Nirupam Kathuriya"
+                fill
+                className="object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-gray-950 via-transparent to-transparent lg:bg-linear-to-r" />
+            </div>
+
+            <div className="lg:col-span-3 p-5 lg:p-5 flex flex-col justify-center relative">
+              <Zap className="absolute top-10 right-10 text-white/5 w-32 h-32 rotate-12" />
+
+              <h3 className="text-red-500 font-bold uppercase tracking-[0.3em] text-xs mb-8">
+                Director's Desk
+              </h3>
+              <blockquote className="text-2xl lg:text-4xl font-medium text-white leading-tight mb-10 font-serif italic opacity-90">
+                "QCD is a convergence of diverse expertise unified by a singular
+                vision — to deliver seamless and hassle-free solutions.
+                Established with the intent to simplify complex bureaucratic
+                mechanisms, we combine in-depth industry knowledge with a
+                practical, hands-on approach to free our clients from redundant
+                procedures and prolonged processes."
+              </blockquote>
+
+              <div className="flex flex-wrap gap-12">
+                <div>
+                  <p className="text-white font-black text-3xl uppercase tracking-tighter">
+                    Nirupam Kathuriya
+                  </p>
+                  <p className="text-red-500 text-xs font-bold uppercase tracking-widest mt-1 ml-2">
+                    Founder & Director
+                  </p>
+                </div>
+                {/* <div className="flex gap-8 border-l border-white/10 pl-8">
+                  <StatSimple label="Years Exp" value="15+" />
+                  <StatSimple label="Global Clients" value="120K" />
+                </div> */}
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* --- TEAM GRID --- */}
+      <section className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <h2 className="text-5xl md:text-7xl font-black text-gray-900 uppercase tracking-tighter leading-[0.9]">
+            The Minds <br />{" "}
+            <span className="text-red-600 italic font-serif lowercase">
+              of the magic
+            </span>
+          </h2>
+          <p className="text-gray-400 font-bold uppercase text-[10px] tracking-[0.3em] pb-2 border-b-2 border-red-600">
+            London • Dubai • New Delhi
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          {TEAM.map((member, i) => (
+            <TeamCard key={i} member={member} index={i} />
+          ))}
         </div>
       </section>
 
@@ -305,81 +380,6 @@ const AboutPage = () => {
     </div>
   </div>
 </section>
-
-      {/* --- DIRECTOR'S MESSAGE --- */}
-      
-      <section className="px-6 lg:px-12 py-12">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-7xl mx-auto bg-gray-950 rounded-[4rem] overflow-hidden relative shadow-2xl"
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-5 items-stretch">
-            <div className="lg:col-span-2 relative min-h-100">
-              <Image
-                src={NirupamKathuriya}
-                alt="Nirupam Kathuriya"
-                fill
-                className="object-cover object-top"
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-gray-950 via-transparent to-transparent lg:bg-linear-to-r" />
-            </div>
-
-            <div className="lg:col-span-3 p-5 lg:p-5 flex flex-col justify-center relative">
-              <Zap className="absolute top-10 right-10 text-white/5 w-32 h-32 rotate-12" />
-
-              <h3 className="text-red-500 font-bold uppercase tracking-[0.3em] text-xs mb-8">
-                Director's Desk
-              </h3>
-              <blockquote className="text-2xl lg:text-4xl font-medium text-white leading-tight mb-10 font-serif italic opacity-90">
-                "QCD is a convergence of diverse expertise unified by a singular
-                vision — to deliver seamless and hassle-free solutions.
-                Established with the intent to simplify complex bureaucratic
-                mechanisms, we combine in-depth industry knowledge with a
-                practical, hands-on approach to free our clients from redundant
-                procedures and prolonged processes."
-              </blockquote>
-
-              <div className="flex flex-wrap gap-12">
-                <div>
-                  <p className="text-white font-black text-3xl uppercase tracking-tighter">
-                    Nirupam Kathuriya
-                  </p>
-                  <p className="text-red-500 text-xs font-bold uppercase tracking-widest mt-1">
-                    Founder & CEO
-                  </p>
-                </div>
-                {/* <div className="flex gap-8 border-l border-white/10 pl-8">
-                  <StatSimple label="Years Exp" value="15+" />
-                  <StatSimple label="Global Clients" value="120K" />
-                </div> */}
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* --- TEAM GRID --- */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-24">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-          <h2 className="text-5xl md:text-7xl font-black text-gray-900 uppercase tracking-tighter leading-[0.9]">
-            The Minds <br />{" "}
-            <span className="text-red-600 italic font-serif lowercase">
-              of the magic
-            </span>
-          </h2>
-          <p className="text-gray-400 font-bold uppercase text-[10px] tracking-[0.3em] pb-2 border-b-2 border-red-600">
-            London • Dubai • New Delhi
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          {TEAM.map((member, i) => (
-            <TeamCard key={i} member={member} index={i} />
-          ))}
-        </div>
-      </section>
 
       <Footer />
     </main>

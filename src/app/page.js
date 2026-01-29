@@ -14,6 +14,7 @@ import Footer from "@/components/Footer";
 import Loader from "@/components/Loader";
 import ChatBot from "@/components/Chatbot";
 import IndiaSpiritual from "@/components/IndiaSpritual";
+import SevenSisters from "@/components/SevenSisters";
 
 export default function Home() {
   // const [isLoading, setIsLoading] = useState(false);
@@ -48,8 +49,9 @@ export default function Home() {
             <GlassNavbar />
             <TravelCarousel />
             <PopularDestinations />
+            <SevenSisters  />
             <IndiaSpiritual />
-            <About />
+            {/* <About /> */}
             <Tours />
             <Offers />
             <TopDestinations />
