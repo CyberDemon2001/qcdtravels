@@ -169,13 +169,12 @@ const SevenSistersBanner = () => {
             })}
           </div>
 
-          {/* Controls */}
          {/* Controls */}
           <div className="flex gap-4 mt-8 lg:mt-12 z-50">
             <button 
               onClick={prevSlide}
               aria-label="Previous Slide"
-              className="p-3 md:p-4 rounded-full border border-white/20 text-white hover:bg-white hover:text-black transition-all"
+              className="p-3 md:p-4 rounded-full border hover:cursor-pointer border-white/20 text-white hover:bg-white hover:text-black transition-all"
             >
               {/* Use className for responsive sizing instead of the size prop */}
               <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
@@ -183,7 +182,7 @@ const SevenSistersBanner = () => {
             <button 
               onClick={nextSlide}
               aria-label="Next Slide"
-              className="p-3 md:p-4 rounded-full bg-red-600 text-white hover:bg-red-700 transition-all shadow-lg"
+              className="p-3 md:p-4 rounded-full hover:cursor-pointer bg-red-600 text-white hover:bg-red-700 transition-all shadow-lg"
             >
               <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
             </button>

@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { MapPin, ChevronLeft, ChevronRight, Flower2 } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const spiritualDestinations = [
   {
@@ -46,6 +47,7 @@ const spiritualDestinations = [
 const IndiaSpiritual = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsVisible, setItemsVisible] = useState(5);
+  const router = useRouter();
 
   // Responsive logic: Update visible items based on screen width
   useEffect(() => {
@@ -102,17 +104,17 @@ const IndiaSpiritual = () => {
               Char Dham Yatra <br className="hidden md:block"/>
               <span className="text-orange-400">& India Spiritual</span>
             </h2>
-            <button className="bg-red-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold text-xs md:text-sm hover:bg-red-700 transition-all active:scale-95">
+            <button onClick={()=>{router.push('/contact')}} className="bg-red-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold text-xs md:text-sm hover:bg-red-700 hover:cursor-pointer transition-all active:scale-95">
               Book Darshan Now
             </button>
           </div>
 
           {/* Controls - Positioned differently on mobile */}
           <div className="absolute right-4 md:right-8 bottom-4 md:bottom-48 flex gap-2 md:gap-3 z-20">
-             <button onClick={prevSlide} className="p-2 md:p-3 bg-white/90 rounded-full text-red-600 shadow-lg active:scale-90 transition-transform">
+             <button onClick={prevSlide} className="p-2 md:p-3 bg-white/90 rounded-full text-red-600 shadow-lg active:scale-90 transition-transform hover:cursor-pointer">
                 <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
              </button>
-             <button onClick={nextSlide} className="p-2 md:p-3 bg-white/90 rounded-full text-red-600 shadow-lg active:scale-90 transition-transform">
+             <button onClick={nextSlide} className="p-2 md:p-3 bg-white/90 rounded-full text-red-600 shadow-lg active:scale-90 transition-transform hover:cursor-pointer">
                 <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
              </button>
           </div>
