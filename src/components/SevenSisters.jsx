@@ -62,7 +62,7 @@ const SevenSistersBanner = () => {
               priority
             />
             {/* Optimized overlays for mobile readability */}
-            <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#1a1310] via-[#1a1310]/80 lg:via-[#1a1310]/60 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-b lg:bg-linear-to-r from-[#1a1310] via-[#1a1310]/80 lg:via-[#1a1310]/60 to-transparent" />
             <div className="absolute inset-0 bg-black/40 lg:bg-black/20" />
           </motion.div>
         </AnimatePresence>
@@ -71,10 +71,10 @@ const SevenSistersBanner = () => {
       {/* 2. NAVIGATION OVERLAY (Desktop Only) */}
       <div className="absolute left-8 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col items-center gap-8">
         <span className="text-white/40 font-bold rotate-90 tracking-widest text-xs uppercase">Scroll</span>
-        <div className="w-px h-24 bg-gradient-to-b from-transparent via-white/50 to-transparent" />
+        <div className="w-px h-24 bg-linear-to-b from-transparent via-white/50 to-transparent" />
         <div className="text-white flex flex-col items-center">
             <span className="text-2xl font-black italic">0{currentIndex + 1}</span>
-            <div className="w-8 h-[2px] bg-red-600 my-2" />
+            <div className="w-8 h-0.5 bg-red-600 my-2" />
             <span className="text-white/40 text-xs font-bold">0{destinations.length}</span>
         </div>
       </div>
@@ -94,7 +94,7 @@ const SevenSistersBanner = () => {
               </span>
               <h2 className="text-white text-4xl md:text-6xl lg:text-8xl font-black uppercase leading-tight lg:leading-none tracking-tighter mb-4">
                 Explore <br/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-white/40 italic font-serif lowercase">the</span> <br/>
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-white via-white/80 to-white/40 italic font-serif lowercase">the</span> <br/>
                 <span className="text-red-600">#Unexplored</span>
               </h2>
               
@@ -103,7 +103,7 @@ const SevenSistersBanner = () => {
               </p>
 
               <button className="relative px-6 py-3 md:px-10 md:py-5 bg-black/40 border border-white/10 rounded-sm overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
+                <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
                 <span className="relative text-sm md:text-xl font-bold uppercase tracking-[0.2em] text-white">
                   The <span className="text-red-600">Seven</span> Sisters
                 </span>
@@ -131,14 +131,14 @@ const SevenSistersBanner = () => {
           </AnimatePresence>
 
           {/* The Stack/Fan */}
-          <div className="relative flex items-center justify-center w-full h-[320px] md:h-[400px]">
+          <div className="relative flex items-center justify-center w-full h-80 md:h-100">
             {getVisibleCards().map((dest) => {
               const isMiddle = dest.pos === 'middle';
               return (
                 <motion.div
                   key={dest.id}
                   className={`
-                    absolute w-[180px] md:w-[240px] lg:w-[280px] h-[260px] md:h-[350px] lg:h-[420px] 
+                    absolute w-45 md:w-60 lg:w-70 h-65 md:h-87.5 lg:h-105 
                     rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl
                     border border-white/10
                   `}
@@ -153,7 +153,7 @@ const SevenSistersBanner = () => {
                   transition={{ type: "spring", stiffness: 300, damping: 25 }}
                 >
                   <Image src={dest.image} alt={dest.name} fill className="object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent" />
                   
                   {isMiddle && (
                     <div className="absolute bottom-6 left-6 text-white">

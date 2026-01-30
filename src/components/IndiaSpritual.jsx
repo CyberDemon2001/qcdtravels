@@ -19,25 +19,25 @@ const spiritualDestinations = [
   {
     id: 3,
     name: "Ayodhya & Kashi",
-    image: "https://images.unsplash.com/photo-1705912444390-f044038a3915?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1635337136044-83e78752bc4a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmFtJTIwbWFuZGlyfGVufDB8fDB8fHww",
     tag: "Ram Janmabhoomi",
   },
   {
     id: 4,
     name: "Vaishno Devi",
-    image: "https://images.unsplash.com/photo-1634300342587-802577909386?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1717502713522-543a97e13dab?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     tag: "Mata Rani",
   },
   {
     id: 5,
     name: "Devi Darshan",
-    image: "https://images.unsplash.com/photo-1614082242765-7c98ca0f3df3?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1597133541155-8f2f9da143a6?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     tag: "Power Shakti",
   },
   {
     id: 6,
     name: "Golden Temple",
-    image: "https://images.unsplash.com/photo-1545318181-79e564757c2a?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1623059508779-2542c6e83753?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     tag: "Peace",
   },
 ];
@@ -91,7 +91,7 @@ const IndiaSpiritual = () => {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/70 md:from-red-900/50 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t md:bg-linear-to-r from-black/70 md:from-red-900/50 to-transparent" />
           
           <div className="absolute bottom-10 md:top-20 left-6 md:left-12 text-white z-10 pr-6">
             <div className="flex items-center gap-2 mb-2 md:mb-4 text-orange-200">
@@ -129,17 +129,17 @@ const IndiaSpiritual = () => {
             {spiritualDestinations.map((dest) => (
               <div 
                 key={dest.id} 
-                className="px-2 box-border flex-shrink-0"
+                className="px-2 box-border shrink-0"
                 style={{ width: `${100 / itemsVisible}%` }}
               >
-                <div className="relative aspect-[4/5] rounded-xl md:rounded-2xl overflow-hidden shadow-lg border-b-4 border-red-600 group cursor-pointer">
+                <div className="relative aspect-4/5 rounded-xl md:rounded-2xl overflow-hidden shadow-lg border-b-4 border-red-600 group cursor-pointer">
                   <Image 
                     src={dest.image} 
                     alt={dest.name} 
                     fill 
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/90 via-transparent to-transparent" />
                   <div className="absolute top-2 left-2 md:top-3 md:left-3">
                     <span className="bg-red-600 text-[8px] md:text-[10px] text-white px-2 py-1 rounded-md font-bold uppercase">
                       {dest.tag}
