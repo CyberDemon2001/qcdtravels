@@ -39,7 +39,7 @@ export const DESTINATIONS = [
     tagline: "Where History Meets Modernity",
     about: "London is a city that seamlessly blends its rich history with contemporary culture. From iconic landmarks like the Tower of London and Buckingham Palace to vibrant neighborhoods like Shoreditch and Camden, London offers a dynamic experience for every visitor.",
     highlights: ["Exploring the British Museum", "Cruising the Thames", "Visiting the West End Theatres"],
-    image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&q=80",
     slug: "london",
     description: "Classic European charm meets modern global culture."
   },

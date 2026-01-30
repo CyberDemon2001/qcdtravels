@@ -26,7 +26,7 @@ const SevenSistersBanner = () => {
   };
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 6000);
+    const timer = setInterval(nextSlide, 3000);
     return () => clearInterval(timer);
   }, [nextSlide]);
 

@@ -4,13 +4,44 @@ import Image from 'next/image';
 import { MapPin, ChevronLeft, ChevronRight, Flower2 } from 'lucide-react';
 
 const spiritualDestinations = [
-  { id: 1, name: "Char Dham Uttrakhand", image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80", tag: "Most Sacred" },
-  { id: 2, name: "12 Jyotirlinga", image: "https://images.unsplash.com/photo-1620021516086-44474932069b?auto=format&fit=crop&w=800&q=80", tag: "Shiva Tour" },
-  { id: 3, name: "Ayodhya & Kashi", image: "https://images.unsplash.com/photo-1616081729003-8869c4f74676?auto=format&fit=crop&w=800&q=80", tag: "Ram Janmabhoomi" },
-  { id: 4, name: "Vaishno Devi", image: "https://images.unsplash.com/photo-1596395349424-6447781f8f70?auto=format&fit=crop&w=800&q=80", tag: "Mata Rani" },
-  { id: 5, name: "Devi Darshan", image: "https://images.unsplash.com/photo-1614082242765-7c98ca0f3df3?auto=format&fit=crop&w=800&q=80", tag: "Power Shakti" },
-  { id: 6, name: "Golden Temple", image: "https://images.unsplash.com/photo-1514222139-b776f2acf07d?auto=format&fit=crop&w=800&q=80", tag: "Peace" },
+  {
+    id: 1,
+    name: "Char Dham Uttarakhand",
+    image: "https://images.unsplash.com/photo-1584810359583-96fc3448beaa?auto=format&fit=crop&w=800&q=80",
+    tag: "Most Sacred",
+  },
+  {
+    id: 2,
+    name: "12 Jyotirlinga",
+    image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80",
+    tag: "Shiva Tour",
+  },
+  {
+    id: 3,
+    name: "Ayodhya & Kashi",
+    image: "https://images.unsplash.com/photo-1705912444390-f044038a3915?auto=format&fit=crop&w=800&q=80",
+    tag: "Ram Janmabhoomi",
+  },
+  {
+    id: 4,
+    name: "Vaishno Devi",
+    image: "https://images.unsplash.com/photo-1634300342587-802577909386?auto=format&fit=crop&w=800&q=80",
+    tag: "Mata Rani",
+  },
+  {
+    id: 5,
+    name: "Devi Darshan",
+    image: "https://images.unsplash.com/photo-1614082242765-7c98ca0f3df3?auto=format&fit=crop&w=800&q=80",
+    tag: "Power Shakti",
+  },
+  {
+    id: 6,
+    name: "Golden Temple",
+    image: "https://images.unsplash.com/photo-1545318181-79e564757c2a?auto=format&fit=crop&w=800&q=80",
+    tag: "Peace",
+  },
 ];
+
 
 const IndiaSpiritual = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -52,7 +83,7 @@ const IndiaSpiritual = () => {
       <main className="w-full mx-auto relative">
         
         {/* Hero Banner - Height adjusted for mobile */}
-        <div className="relative h-[400px] md:h-[480px] mx-4 md:mx-10 lg:mx-20 rounded-2xl md:rounded-3xl overflow-hidden shadow-xl">
+        <div className="relative h-100 md:h-120 mx-4 md:mx-10 lg:mx-20 rounded-2xl md:rounded-3xl overflow-hidden shadow-xl">
           <Image 
             src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=2000&q=80"
             alt="Himalayas"

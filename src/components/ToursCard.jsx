@@ -85,7 +85,7 @@ const ToursCard = ({ item, index }) => {
                   <span className="text-3xl font-black text-red-200">{plan.days}</span>
                   <div className="flex flex-col">
                     <span className="text-[10px] text-gray-400 font-bold uppercase leading-none">
-                      Days in
+                      {plan.days > 1 ? "Days In" : "Day In"}
                     </span>
                     <span className="text-[10px] text-[#0A2357] font-black">{plan.city}</span>
                   </div>
