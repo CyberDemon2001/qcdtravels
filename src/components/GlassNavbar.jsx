@@ -89,7 +89,7 @@ const GlassNavbar = () => {
           <div className="hidden md:flex">
             <button
               onClick={() => router.push("/tours")}
-              className={`px-6 py-2 text-white rounded-xl shadow-lg text-xs font-black uppercase tracking-widest transition active:scale-95 ${
+              className={`px-6 py-2 text-white rounded-xl hover:cursor-pointer shadow-lg text-xs font-black uppercase tracking-widest transition active:scale-95 ${
                 toursActive
                   ? "bg-red-700 shadow-red-700/30"
                   : "bg-linear-to-r from-red-600 to-blue-700 shadow-red-600/20"
