@@ -71,7 +71,7 @@ const ContactPage = () => {
       <section className="relative pt-32 pb-16 bg-black overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <img
-            src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="background"
             className="w-full h-full object-cover"
           />
